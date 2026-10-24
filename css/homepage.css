@@ -1,0 +1,18 @@
+@import url("./components.css");
+.hero { overflow: clip; position: relative; background: var(--blue); border-bottom: 10px solid var(--yellow); }
+.hero::before { content: ""; position: absolute; width: 45vw; max-width: 35rem; aspect-ratio: 1; right: -16vw; top: 8%; border: clamp(10px, 3vw, 45px) solid rgba(255, 207, 51, 0.25); border-radius: 50%; pointer-events: none; }
+.hero-inner { position: relative; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(14rem, 0.8fr); align-items: center; gap: 3rem; padding-block: clamp(4rem, 8vw, 8rem); }
+.hero h1 { margin: 1rem 0; color: var(--paper); text-shadow: 5px 6px 0 var(--ink); }
+.hero h1 span { color: var(--yellow); }
+.hero .lead { font-weight: 800; }
+.hero-side { display: grid; gap: 1.5rem; align-items: center; justify-items: start; }
+.hero-callout { transform: rotate(2deg); }
+.hero-stamp { width: min(100%, 20rem); padding: 2rem; color: var(--ink); background: var(--yellow); border: 5px solid var(--ink); box-shadow: 9px 9px 0 var(--paper); transform: rotate(-3deg); }
+.hero-stamp strong { font: clamp(2rem, 5vw, 4rem)/1 var(--font-display); }
+.feature-number { font: 3.5rem/1 var(--font-display); color: var(--blue-on-light); }
+.feature-card h3 { font-size: 1.4rem; }
+.call-to-action { background: var(--yellow); color: var(--ink); }
+.call-to-action h2 { font-size: clamp(2rem, 5vw, 4.6rem); }
+.call-to-action .button { box-shadow: 4px 4px 0 var(--ink); }
+@media (max-width: 52rem) { .hero-inner { grid-template-columns: 1fr; } .hero-side { grid-template-columns: 1fr 1fr; } .hero-stamp { padding: 1.3rem; } }
+@media (max-width: 35rem) { .hero-side { grid-template-columns: 1fr; } .hero h1 { text-shadow: 3px 3px 0 var(--ink); } }

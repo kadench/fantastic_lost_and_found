@@ -1,0 +1,12 @@
+@import url("./components.css");
+.error-main { min-height: calc(100vh - 9rem); display: grid; place-items: center; padding: 4rem 0; }
+.error-wrap { width: min(100% - 2rem, 65rem); margin-inline: auto; text-align: center; }
+.portal { display: flex; align-items: center; justify-content: center; width: min(58vw, 21rem); aspect-ratio: 1; margin: 1rem auto 2rem; border-radius: 50%; border: 14px solid var(--yellow); box-shadow: 0 0 0 10px var(--blue), 0 0 0 17px var(--red); background: var(--panel); animation: portal-pulse 3s ease-in-out infinite; }
+.portal span { font: clamp(3.8rem, 14vw, 8rem)/1 var(--font-display); color: var(--paper); }
+.error-wrap h1 { font-size: clamp(2rem, 6vw, 4.6rem); margin: 1.4rem 0; }
+.error-wrap h1 em { color: var(--yellow); font-style: normal; }
+.error-wrap .speech { margin-bottom: 0.8rem; }
+.error-wrap .lead { margin: 0 auto 1.7rem; }
+.error-wrap .button-row { justify-content: center; }
+@keyframes portal-pulse { 0%, 100% { transform: scale(1) rotate(-3deg); } 50% { transform: scale(1.035) rotate(3deg); } }
+@media (max-width: 35rem) { .portal { border-width: 8px; box-shadow: 0 0 0 6px var(--blue), 0 0 0 10px var(--red); } }

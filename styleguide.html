@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101426">
+  <title>Lost & Found — Style Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styleguide.css">
+  <script type="module" src="js/styleguide.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="wordmark" href="index.html">LOST <span>&amp;</span> FOUND</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="index.html" >Home</a>
+        <a href="styleguide.html" aria-current="page">Style guide</a>
+        <a href="404.html" >404</a>
+      </nav>
+    </div>
+  </header>
+  <div class="guide-intro">
+    <div class="container"><span class="kicker">Design reference / Issue 01</span><h1>THE STYLE GUIDE.</h1><p class="lead">A single system of type, color, space, and interaction.</p></div>
+  </div>
+  <div class="container guide-layout">
+    <aside class="guide-sidebar" aria-label="Style guide sections">
+      <p class="guide-nav-title">On this page</p>
+      <nav aria-label="Style guide jump links">          <a href="#overview">Overview</a>
+          <a href="#colors">Color system</a>
+          <a href="#typography">Typography</a>
+          <a href="#spacing">Spacing & sizing</a>
+          <a href="#buttons">Buttons</a>
+          <a href="#forms">Forms</a>
+          <a href="#components">Components</a>
+          <a href="#accessibility">Accessibility</a></nav>
+    </aside>
+    <main id="main">
+      <section class="guide-section" id="overview" tabindex="-1">
+        <h2>Overview</h2>
+        <p>The identity combines comic-book impact with a dark, editorial foundation. Saturated primary colors function as accents, not interchangeable text colors. A primary symbol is intentionally absent pending human-made artwork.</p>
+        <div class="panel panel--yellow"><span class="kicker">Identity system</span><h3>LOST &amp; FOUND</h3><p>Display: Archivo Black. Body: DM Sans. Square primary mark: reserved artwork slot, 1:1 ratio, minimum 40 × 40 px in navigation and 256 × 256 px source specification. No generated illustration or emblem is supplied.</p></div>
+      </section>
+      <section class="guide-section" id="colors" tabindex="-1">
+        <h2>Color system</h2><p>Saturated colors are deliberately separated from their dark, accessible text counterparts. Raw accent colors are not automatically approved as body-text foregrounds.</p>
+        <div class="palette">          <div class="swatch"><div class="swatch-color" style="background: #101426"></div><div class="swatch-info"><strong>Midnight ink</strong><code>#101426</code><small>Main background</small></div></div>
+          <div class="swatch"><div class="swatch-color" style="background: #191F35"></div><div class="swatch-info"><strong>Panel navy</strong><code>#191F35</code><small>Raised surfaces</small></div></div>
+          <div class="swatch"><div class="swatch-color" style="background: #FFF8EC"></div><div class="swatch-info"><strong>Paper white</strong><code>#FFF8EC</code><small>Primary text, light panels</small></div></div>
+          <div class="swatch"><div class="swatch-color" style="background: #FFCF33"></div><div class="swatch-info"><strong>Power yellow</strong><code>#FFCF33</code><small>Action / focus</small></div></div>
+          <div class="swatch"><div class="swatch-color" style="background: #FF4B54"></div><div class="swatch-info"><strong>Action red</strong><code>#FF4B54</code><small>Non-text accents</small></div></div>
+          <div class="swatch"><div class="swatch-color" style="background: #315BFF"></div><div class="swatch-info"><strong>Electric blue</strong><code>#315BFF</code><small>Graphic accent</small></div></div>
+          <div class="swatch"><div class="swatch-color" style="background: #A81736"></div><div class="swatch-info"><strong>Readable red</strong><code>#A81736</code><small>Red text on paper</small></div></div>
+          <div class="swatch"><div class="swatch-color" style="background: #123B9B"></div><div class="swatch-info"><strong>Readable blue</strong><code>#123B9B</code><small>Blue text on paper</small></div></div></div>
+        <div class="panel"><h3>Approved text pairings</h3>
+          <div class="palette-sample" style="background:#101426;color:#FFF8EC">Paper white on midnight ink</div>
+          <div class="palette-sample" style="background:#101426;color:#FFCF33">Power yellow on midnight ink</div>
+          <div class="palette-sample" style="background:#FFF8EC;color:#123B9B">Readable blue on paper white</div>
+          <div class="palette-sample" style="background:#FFF8EC;color:#A81736">Readable red on paper white</div>
+          <p class="field-help">Text pairs require computed WCAG contrast verification. Disabled components are not used to convey essential information.</p>
+        </div>
+      </section>
+      <section class="guide-section" id="typography" tabindex="-1">
+        <h2>Typography</h2><p>Headings: Archivo Black, 900. Body text: DM Sans, 400–800. Responsive display and H1 sizes use <code>clamp()</code>.</p>
+        <div class="panel">            <div class="type-row"><div class="specimen"><span class="field-help">Display</span><span class="type-display">BIG REVEAL</span></div><code>clamp(40px, 5.5vw, 80px) / 1.05 / 900</code></div>
+            <div class="type-row"><div class="specimen"><span class="field-help">Heading 1</span><span class="type-h1">THE HEADLINE</span></div><code>clamp(36px, 4vw, 61px) / 1.1 / 900</code></div>
+            <div class="type-row"><div class="specimen"><span class="field-help">Heading 2</span><span class="type-h2">Heading two</span></div><code>44.8px / 1.12 / 900</code></div>
+            <div class="type-row"><div class="specimen"><span class="field-help">Heading 3</span><span class="type-h3">Heading three</span></div><code>33.6px / 1.15 / 900</code></div>
+            <div class="type-row"><div class="specimen"><span class="field-help">Heading 4</span><span class="type-h4">Heading four</span></div><code>25.6px / 1.2 / 900</code></div>
+            <div class="type-row"><div class="specimen"><span class="field-help">Heading 5</span><span class="type-h5">Heading five</span></div><code>20.8px / 1.25 / 900</code></div>
+            <div class="type-row"><div class="specimen"><span class="field-help">Heading 6</span><span class="type-h6">Heading six</span></div><code>16.8px / 1.3 / 900</code></div>
+            <div class="type-row"><div class="specimen"><span class="field-help">Lead</span><span class="type-lead">The mystery is only beginning.</span></div><code>24px / 1.6 / 400</code></div>
+            <div class="type-row"><div class="specimen"><span class="field-help">Body</span><span class="type-body">A carefully written detail changes everything.</span></div><code>16px / 1.6 / 400</code></div>
+            <div class="type-row"><div class="specimen"><span class="field-help">Small</span><span class="type-small">Supporting information, still readable.</span></div><code>14px / 1.6 / 400</code></div>
+            <div class="type-row"><div class="specimen"><span class="field-help">Caption</span><span class="type-caption">ISSUE 01 • FIGURE 1</span></div><code>12px / 1.6 / 400</code></div></div>
+      </section>
+      <section class="guide-section" id="spacing" tabindex="-1">
+        <h2>Spacing &amp; sizing</h2><p>Base unit: 4 px. Controls have a minimum visual height of 44–48 px. Content width is capped at 76 rem.</p>
+        <div class="panel table-scroll"><table class="token-table"><thead><tr><th>Token</th><th>Size</th><th>Visual</th></tr></thead><tbody><tr><td><code>--space-1</code></td><td>4px</td><td><span class="space-demo" style="width: 4px"></span></td></tr>
+<tr><td><code>--space-2</code></td><td>8px</td><td><span class="space-demo" style="width: 8px"></span></td></tr>
+<tr><td><code>--space-3</code></td><td>12px</td><td><span class="space-demo" style="width: 12px"></span></td></tr>
+<tr><td><code>--space-4</code></td><td>16px</td><td><span class="space-demo" style="width: 16px"></span></td></tr>
+<tr><td><code>--space-6</code></td><td>24px</td><td><span class="space-demo" style="width: 24px"></span></td></tr>
+<tr><td><code>--space-8</code></td><td>32px</td><td><span class="space-demo" style="width: 32px"></span></td></tr>
+<tr><td><code>--space-12</code></td><td>48px</td><td><span class="space-demo" style="width: 48px"></span></td></tr>
+<tr><td><code>--space-16</code></td><td>64px</td><td><span class="space-demo" style="width: 64px"></span></td></tr></tbody></table></div>
+        <div class="panel"><p><strong>Border:</strong> 3 px / <strong>Radius:</strong> 8 px / <strong>Shadow:</strong> 6 px hard offset / <strong>Section spacing:</strong> 56–112 px.</p></div>
+      </section>
+      <section class="guide-section" id="buttons" tabindex="-1">
+        <h2>Buttons</h2><p>Actions are identified by visible text and shape. Hover, active, disabled, loading, and keyboard focus have distinct presentations.</p>
+        <div class="panel panel--dark"><div class="button-row">
+          <button class="button" type="button">Primary action</button>
+          <button class="button button--secondary" type="button">Secondary action</button>
+          <button class="button button--outline" type="button">Outline action</button>
+          <button class="button button--danger" type="button">Danger action</button>
+          <button class="button" type="button" disabled>Disabled</button>
+          <button class="button" type="button" aria-busy="true" disabled>Loading</button>
+          <button class="button button--small" type="button">Small</button>
+          <button class="button button--large" type="button">Large</button>
+        </div></div>
+      </section>
+      <section class="guide-section" id="forms" tabindex="-1">
+        <h2>Forms</h2><p>A complete local-only form specimen shows labeling, native dropdowns, selectable controls, range input, error feedback, reset, and submit behavior. No submission leaves the browser.</p>
+        <div class="panel"><form id="specimen-form" novalidate>
+          <div class="form-grid">
+            <div class="field"><label for="item-name">Item name <span aria-hidden="true">*</span></label><input id="item-name" name="name" required autocomplete="off" aria-describedby="name-help name-error" placeholder="Canvas backpack"><span id="name-help" class="field-help">Required, 2–80 characters.</span><span id="name-error" class="field-error" hidden></span></div>
+            <div class="field"><label for="contact-email">Contact email <span aria-hidden="true">*</span></label><input id="contact-email" name="email" type="email" required autocomplete="email" aria-describedby="email-error" placeholder="person@example.com"><span id="email-error" class="field-error" hidden></span></div>
+            <div class="field"><label for="category">Category (dropdown)</label><select id="category" name="category"><option value="bag">Bag or accessory</option><option value="electronics">Electronics</option><option value="clothing">Clothing</option><option value="other">Other</option></select></div>
+            <div class="field"><label for="search-query">Search field</label><input id="search-query" name="search" type="search" placeholder="Search clues"></div>
+            <div class="field"><label for="number">Number field</label><input id="number" name="quantity" type="number" min="1" max="25" value="1"></div>
+            <div class="field"><label for="password">Password example</label><input id="password" name="password" type="password" autocomplete="new-password" placeholder="Specimen only"><span class="field-help">Not transmitted or stored.</span></div>
+            <div class="field span-two"><label for="details">Description</label><textarea id="details" name="details" rows="3" placeholder="Distinguishing details"></textarea></div>
+            <div class="field span-two"><label for="priority">Search priority: <output id="priority-value" for="priority">50</output>%</label><input id="priority" type="range" min="0" max="100" step="5" value="50"></div>
+            <fieldset class="fieldset span-two"><legend>Preferred updates (radio)</legend><label><input type="radio" name="updates" value="email" checked> Email</label><label><input type="radio" name="updates" value="none"> No updates</label></fieldset>
+            <fieldset class="fieldset span-two"><legend>Preferences (checkboxes)</legend><label><input type="checkbox" name="match-notices"> Send matching clues</label><label><input type="checkbox" name="agree" id="agree"> I understand this is a demo</label></fieldset>
+            <div class="field"><label for="disabled-sample">Disabled example</label><input id="disabled-sample" value="Unavailable input" disabled></div>
+            <div class="field"><label for="invalid-sample">Invalid-state example</label><input id="invalid-sample" value="Needs correction" aria-invalid="true" aria-describedby="invalid-message"><span id="invalid-message" class="field-error">Example: Invalid entry</span></div>
+          </div>
+          <div class="button-row" style="margin-top:1.5rem"><button class="button" type="submit">Submit specimen</button><button class="button button--secondary" type="reset">Reset form</button></div>
+          <p id="form-status" class="status" role="status" aria-live="polite" hidden></p>
+        </form></div>
+      </section>
+      <section class="guide-section" id="components" tabindex="-1">
+        <h2>Components</h2><div class="panel"><div class="speech">A clue worth following.</div><p><span class="tag">OPEN CASE</span> &nbsp; <span class="tag">NEW CLUE</span></p><div class="status">Informational message: the search is in progress.</div><div class="status status--error" style="margin-top:1rem">Error message: the requested action needs attention.</div></div>
+      </section>
+      <section class="guide-section" id="accessibility" tabindex="-1">
+        <h2>Accessibility</h2><div class="panel"><ul>
+          <li>WCAG 2.2 AAA target for applicable text contrast, verified by foreground/background role.</li>
+          <li>Color is never the sole indication of an error, state, or action.</li>
+          <li>Native inputs, labeled controls, landmarks, semantic headings, and visible keyboard focus.</li>
+          <li>Minimum responsive target at 320 CSS px, including 400% zoom checks.</li>
+          <li>Reduced-motion media query suppresses optional animated effects.</li>
+          <li>Human review and assistive-technology testing remain required before claiming AAA conformance.</li>
+        </ul></div>
+      </section>
+    </main>
+  </div>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>Lost &amp; Found / Issue 01</span>
+      <span>Primary mark reserved for human artwork.</span>
+      <a href="styleguide.html">Design system</a>
+    </div>
+  </footer>
+</body>
+</html>

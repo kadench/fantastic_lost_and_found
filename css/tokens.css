@@ -1,0 +1,28 @@
+/* Lost & Found — authoritative design tokens. */
+:root {
+  --ink: #101426;
+  --panel: #191f35;
+  --paper: #fff8ec;
+  --yellow: #ffcf33;
+  --red: #ff4b54;
+  --blue: #315bff;
+  --red-on-light: #a81736;
+  --blue-on-light: #123b9b;
+  --muted: #e3e8f2;
+  --line: #aebbd4;
+  --focus: #ffcf33;
+  --font-display: "Archivo Black", "Arial Black", sans-serif;
+  --font-body: "DM Sans", Arial, sans-serif;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --radius: 0.5rem;
+  --border-heavy: 3px solid var(--ink);
+  --shadow-comic: 6px 6px 0 var(--ink);
+  --container: 76rem;
+}
