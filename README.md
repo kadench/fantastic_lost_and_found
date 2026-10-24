@@ -8,9 +8,9 @@
 
 | Document | Purpose |
 | --- | --- |
-| [Homepage](index.html) | Comic-cover hero, story, features, and interactive clue dialogue |
-| [Style guide](styleguide.html) | Reference specimens for color, typography, controls, full form, states, and spacing |
-| [404](404.html) | Animated portal with interactive clue dialogue and return link |
+| [Homepage](https://kadench.github.io/fantastic_lost_and_found/index.html) | Comic-cover hero, story, features, and interactive clue dialogue |
+| [Style guide](https://kadench.github.io/fantastic_lost_and_found/styleguide.html) | Reference specimens for color, typography, controls, full form, states, and spacing |
+| [404](https://kadench.github.io/fantastic_lost_and_found/404.html) | Animated portal with interactive clue dialogue and return link |
 
 ## Palette
 
