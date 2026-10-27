@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Find lost belongings and help reunite people with their items." />
+  <title>Lost & Found | Reuniting People With Their Belongings</title>
+  <link rel="stylesheet" href="lost-and-found-styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Lost and Found home"><span class="brand-icon">⌕</span><span>Lost &amp; Found</span></a>
+    <nav class="main-nav" aria-label="Main navigation"><a class="active" href="#home">Home</a><a href="#items">Browse Items</a><a href="#report">Report an Item</a><a href="#about">About</a></nav>
+    <div class="account-actions"><a class="login" href="#login">Log In</a><a class="signup" href="#signup">Sign Up</a></div>
+  </header>
+
+  <main id="home">
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-content"><h1 id="hero-heading">Lost something?<br />Help return it.</h1><p>A community-driven lost and found platform to reunite people with their belongings.</p><div class="hero-actions"><a class="btn btn-primary" href="#report">＋ &nbsp;Report a Lost Item</a><a class="btn btn-outline" href="#report">⌕ &nbsp;Report a Found Item</a></div></div>
+    </section>
+
+    <div class="content-layout" id="items">
+      <aside class="filters" aria-label="Filter items"><h2>Filter Items</h2><form id="filter-form"><label for="category">Item Type</label><select id="category"><option value="all">All Categories</option><option value="bags">Bags &amp; Clothing</option><option value="electronics">Electronics</option><option value="accessories">Accessories</option><option value="other">Other</option></select><label for="location">Location</label><select id="location"><option value="all">All Locations</option><option value="library">Library</option><option value="student center">Student Center</option><option value="gym">Gym</option><option value="science building">Science Building</option><option value="cafeteria">Cafeteria</option><option value="engineering building">Engineering Building</option><option value="classroom 201">Classroom 201</option><option value="parking lot b">Parking Lot B</option></select><fieldset><legend>Status</legend><label class="check"><input id="show-lost" type="checkbox" checked /> Lost Items</label><label class="check"><input id="show-found" type="checkbox" checked /> Found Items</label></fieldset><label for="date">Date Posted</label><select id="date"><option value="all">Any Time</option><option value="7">Last 7 Days</option><option value="30">Last 30 Days</option></select><button class="btn btn-primary apply" type="submit">Apply Filters</button></form></aside>
+
+      <section class="listings" aria-labelledby="recent-heading"><div class="listings-heading"><h2 id="recent-heading">Recent Items</h2><label for="sort">Sort by <select id="sort"><option value="newest">Newest First</option><option value="oldest">Oldest First</option><option value="name">Name A–Z</option></select></label></div><div class="item-grid" id="item-grid">
+        <article class="item-card" data-category="bags" data-location="library" data-status="found" data-date="2026-10-24" data-name="Black Backpack"><div class="item-photo"><img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=700&q=85" alt="Black backpack" /><span class="status found">Found</span></div><div class="item-info"><h3>Black Backpack</h3><p>📍 Library</p><p>▦ Oct 24, 2026</p><button class="details" type="button">View Details</button></div></article>
+        <article class="item-card" data-category="accessories" data-location="student center" data-status="lost" data-date="2026-10-22" data-name="Keys with Blue Keychain"><div class="item-photo"><img src="https://images.unsplash.com/photo-1582139329536-e7284fece509?w=700&q=85" alt="Keys" /><span class="status lost">Lost</span></div><div class="item-info"><h3>Keys with Blue Keychain</h3><p>📍 Student Center</p><p>▦ Oct 22, 2026</p><button class="details" type="button">View Details</button></div></article>
+        <article class="item-card" data-category="other" data-location="gym" data-status="found" data-date="2026-10-21" data-name="Water Bottle"><div class="item-photo"><img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=700&q=85" alt="Water bottle" /><span class="status found">Found</span></div><div class="item-info"><h3>Water Bottle</h3><p>📍 Gym</p><p>▦ Oct 21, 2026</p><button class="details" type="button">View Details</button></div></article>
+        <article class="item-card" data-category="electronics" data-location="science building" data-status="lost" data-date="2026-10-20" data-name="Wireless Earbuds"><div class="item-photo"><img src="https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=700&q=85" alt="Wireless earbuds" /><span class="status lost">Lost</span></div><div class="item-info"><h3>Wireless Earbuds</h3><p>📍 Science Building</p><p>▦ Oct 20, 2026</p><button class="details" type="button">View Details</button></div></article>
+        <article class="item-card" data-category="bags" data-location="cafeteria" data-status="found" data-date="2026-10-19" data-name="Black Jacket"><div class="item-photo"><img src="https://images.unsplash.com/photo-1544923246-77307dd654cb?w=700&q=85" alt="Black jacket" /><span class="status found">Found</span></div><div class="item-info"><h3>Black Jacket</h3><p>📍 Cafeteria</p><p>▦ Oct 19, 2026</p><button class="details" type="button">View Details</button></div></article>
+        <article class="item-card" data-category="accessories" data-location="engineering building" data-status="lost" data-date="2026-10-18" data-name="Student ID"><div class="item-photo"><img src="https://images.unsplash.com/photo-1633265486064-086b219458ec?w=700&q=85" alt="Student ID and lanyard" /><span class="status lost">Lost</span></div><div class="item-info"><h3>Student ID</h3><p>📍 Engineering Building</p><p>▦ Oct 18, 2026</p><button class="details" type="button">View Details</button></div></article>
+        <article class="item-card" data-category="accessories" data-location="classroom 201" data-status="found" data-date="2026-10-17" data-name="Glasses"><div class="item-photo"><img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=700&q=85" alt="Eyeglasses" /><span class="status found">Found</span></div><div class="item-info"><h3>Glasses</h3><p>📍 Classroom 201</p><p>▦ Oct 17, 2026</p><button class="details" type="button">View Details</button></div></article>
+        <article class="item-card" data-category="accessories" data-location="parking lot b" data-status="lost" data-date="2026-10-16" data-name="Wallet"><div class="item-photo"><img src="https://images.unsplash.com/photo-1627123424574-724758594e93?w=700&q=85" alt="Wallet" /><span class="status lost">Lost</span></div><div class="item-info"><h3>Wallet</h3><p>📍 Parking Lot B</p><p>▦ Oct 16, 2026</p><button class="details" type="button">View Details</button></div></article>
+      </div><p id="empty-state" hidden>No items match your filters. Try another selection.</p></section>
+    </div>
+    <section class="report-section" id="report"><h2>Have something to report?</h2><p>Help your community by posting a lost or found item.</p><a class="btn btn-primary" href="mailto:lostfound@example.com?subject=Lost%20or%20Found%20Item">Contact Us to Report</a></section>
+  </main>
+  <footer id="about"><a class="brand" href="#home"><span class="brand-icon">⌕</span><span>Lost &amp; Found</span></a><nav aria-label="Footer navigation"><a href="#home">Home</a><a href="#items">Browse Items</a><a href="#report">Report an Item</a><a href="#about">About</a><a href="mailto:lostfound@example.com">Contact</a></nav><span class="footer-note">Made for the community</span></footer>
+  <dialog id="item-dialog"><button class="close-dialog" aria-label="Close dialog">×</button><h2 id="dialog-title"></h2><p id="dialog-description"></p><p>To claim an item, contact the site administrator and provide proof of ownership.</p><button class="btn btn-primary close-bottom">Close</button></dialog>
+  <script>
+    const cards = [...document.querySelectorAll('.item-card')];
+    const grid = document.getElementById('item-grid');
+    const empty = document.getElementById('empty-state');
+    function filterItems(event) {
+      if (event) event.preventDefault();
+      const category = document.getElementById('category').value;
+      const location = document.getElementById('location').value;
+      const lost = document.getElementById('show-lost').checked;
+      const found = document.getElementById('show-found').checked;
+      const days = document.getElementById('date').value;
+      const cutoff = new Date('2026-10-26T00:00:00');
+      cutoff.setDate(cutoff.getDate() - Number(days === 'all' ? 9999 : days));
+      let visible = 0;
+      cards.forEach(card => {
+        const matches = (category === 'all' || card.dataset.category === category) &&
+          (location === 'all' || card.dataset.location === location) &&
+          ((lost && card.dataset.status === 'lost') || (found && card.dataset.status === 'found')) &&
+          new Date(card.dataset.date + 'T00:00:00') >= cutoff;
+        card.hidden = !matches;
+        if (matches) visible++;
+      });
+      empty.hidden = visible !== 0;
+      sortItems();
+    }
+    function sortItems() {
+      const sort = document.getElementById('sort').value;
+      cards.sort((a,b) => sort === 'name' ? a.dataset.name.localeCompare(b.dataset.name) : sort === 'oldest' ? a.dataset.date.localeCompare(b.dataset.date) : b.dataset.date.localeCompare(a.dataset.date));
+      cards.forEach(card => grid.appendChild(card));
+    }
+    document.getElementById('filter-form').addEventListener('submit', filterItems);
+    document.getElementById('sort').addEventListener('change', sortItems);
+    const dialog = document.getElementById('item-dialog');
+    document.querySelectorAll('.details').forEach(button => button.addEventListener('click', () => {
+      const card = button.closest('.item-card');
+      document.getElementById('dialog-title').textContent = card.dataset.name;
+      document.getElementById('dialog-description').textContent = `${card.dataset.status.toUpperCase()} · ${card.dataset.location} · ${card.dataset.date}`;
+      dialog.showModal();
+    }));
+    document.querySelectorAll('.close-dialog, .close-bottom').forEach(button => button.addEventListener('click', () => dialog.close()));
+    dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+  </script>
+</body>
+</html>
