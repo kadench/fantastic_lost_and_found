@@ -4,6 +4,23 @@ Permanent record of **completed project changes**, organized newest first. An en
 
 Completed changes are listed below. Prior work must not be backfilled with invented dates, tests, or approvals.
 
+## LF-0002 — Add styled About Us page
+
+- **Completed (UTC):** 2026-10-29T16:28:28Z
+- **Related task:** [LF-0002](BACKLOG.md#lf-0002--add-styled-about-us-page)
+- **Changed paths:**
+  - `about.html`
+  - `css/about.css`
+  - `index.html`
+  - `BACKLOG.md`
+- **Before:** The homepage About links pointed to an in-page summary, and the project had no standalone About Us page.
+- **After:** Added a comic-styled `about.html` page containing the supplied About Us copy, four empty square team-photo placeholders with accessible labels, shared navigation, and links back to the homepage sections. Updated both homepage About links to navigate to `about.html`.
+- **Reason:** The project needed the Google Sites About Us content represented in the repository's visual system while leaving team-photo connections for later.
+- **Verification:** Viewed the new About Us page in the local browser at desktop and narrow rendered widths; confirmed the supplied headings, paragraphs, team labels, and mission copy were present; confirmed four square placeholders rendered; clicked the homepage About link and verified navigation to `about.html`; checked no horizontal overflow and no browser console errors; ran `git diff --check`.
+- **Not verified:** Prettier was not available in the local cache; exhaustive 320/375/768/1024/1440 viewport review, zoom/text enlargement, color-vision simulation, assistive-technology review, full WCAG AAA contrast audit, ZIP validation, and final human-photo integration were not run.
+- **Risks:** The team placeholders are intentionally CSS-only and contain no image assets; the final human-provided photos still need to be connected later.
+- **Rollback:** Revert `about.html`, `css/about.css`, and the About-link/summary changes in `index.html`; retain the task and changelog records as historical documentation.
+
 ## LF-0001 — Rebuild homepage around lost-and-found listings
 
 - **Completed (UTC):** 2026-10-29T16:05:06Z

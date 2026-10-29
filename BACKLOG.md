@@ -27,6 +27,17 @@ _No tasks in progress._
 
 ## Completed
 
+### LF-0002 — Add styled About Us page
+
+- **Status:** Completed
+- **Created:** 2026-10-29T16:25:03Z
+- **Owner approval:** Approved by repository owner on 2026-10-29T16:25:03Z
+- **Objective:** Add a comic-styled About Us page containing the supplied source copy word-for-word and connect the homepage About links to it.
+- **Scope:** `about.html`, `css/about.css`, `index.html`, and factual task/change records.
+- **Acceptance criteria:** The new page renders the supplied Who Are We, Meet the Team, and Our Mission content without wording changes; presents four empty 1:1 team-photo placeholders with the supplied labels; uses the authoritative site tokens and shared navigation; and the homepage About links navigate to `about.html`.
+- **Progress:** Created and browser-verified the About Us page, placeholders, and homepage navigation links.
+- **Last updated:** 2026-10-29T16:28:28Z
+
 ### LF-0001 — Rebuild homepage around lost-and-found listings
 
 - **Status:** Completed
