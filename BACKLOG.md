@@ -1,6 +1,6 @@
 # Lost & Found — Backlog
 
-> **Proposal template.** No tasks are approved by this document. Only the repository owner may approve tasks. This file works without Git or GitHub.
+> **Optional planning record.** Use this file for substantial, deferred, multi-session, or explicitly tracked work. A direct repository-owner request authorizes routine local work without a backlog entry. This file works without Git or GitHub.
 
 ## Status definitions
 
@@ -8,10 +8,10 @@
 | --- | --- | --- |
 | Proposed | Work is suggested but not authorized | Owner or agent |
 | Approved | Scope has been authorized | Owner only |
-| In Progress | Authorized work has begun | Agent or owner, on an approved task |
-| Completed | Implementation and change record finished | Agent or owner, on an approved task |
+| In Progress | Authorized tracked work has begun | Agent or owner, on an approved task |
+| Completed | Tracked work is finished | Agent or owner, on an approved task |
 
-Use sequential task IDs (`LF-0001`, `LF-0002`). IDs are permanent, including canceled proposals. Record dates in ISO 8601 UTC. No personal details or device identifiers.
+For tracked work, use sequential task IDs (`LF-0001`, `LF-0002`). IDs are permanent, including canceled proposals. Record dates in ISO 8601 UTC. No personal details or device identifiers. Routine fixes, documentation edits, and internal maintenance do not require task entries.
 
 ## Proposed
 
@@ -49,9 +49,9 @@ _No tasks in progress._
 - **Progress:** Rebuilt the homepage structure, comic styling, and local interactions; verified the rendered page and core behaviors in the local browser.
 - **Last updated:** 2026-10-29T16:05:06Z
 
-## Task entry template
+## Optional task entry template
 
-Copy the following structure into the section matching the task's status. A new task always begins as **Proposed** until the owner approves it.
+Use this structure only when tracking adds value. A planned task begins as **Proposed** until the owner approves it; a direct owner-requested task may be recorded as **Approved** with its factual approval time.
 
 ```md
 ### LF-0001 — Short, specific title
@@ -66,4 +66,4 @@ Copy the following structure into the section matching the task's status. A new 
 - **Last updated:** YYYY-MM-DDTHH:MM:SSZ
 ```
 
-When approved, replace `Owner approval` with an explicit indication that the owner approved this task and the UTC approval time, if known. Do not infer authorization from a request that lacks clear approval. Record only relevant milestones; avoid long activity diaries. Completed tasks remain indexed here and receive a corresponding `CHANGELOG.md` entry.
+When approved, replace `Owner approval` with an explicit indication that the owner approved this task and the UTC approval time, if known. Do not infer authorization from an unclear request. Record only meaningful milestones; `In Progress` updates are optional. A completed task needs a `CHANGELOG.md` entry only when it is a release or major user-visible change.

@@ -18,21 +18,19 @@ This file defines the standing requirements for contributors and coding agents w
 
 Before modifying files:
 
-1. Read this entire `AGENTS.md` and the relevant section of `CONTRIBUTING.md`.
-2. Read `BACKLOG.md` to identify an **owner-approved** task and its boundaries.
-3. Inspect the actual files involved. Source code and `css/tokens.css` establish the current implementation; do not assume a past conversation is available.
-4. Review any relevant recent `CHANGELOG.md` entry to avoid duplicating or reversing current work.
+1. Read this `AGENTS.md` and the relevant section of `CONTRIBUTING.md` when beginning a task. Do not reread them during the same task unless they change or a conflict appears.
+2. Inspect the actual files involved. Source code and `css/tokens.css` establish the current implementation; do not assume a past conversation is available.
+3. Consult `BACKLOG.md` only when the work is tracked there, and consult `CHANGELOG.md` when release history is relevant.
 
-`AGENTS.md` describes project purpose, constraints, architecture, and operating rules. `BACKLOG.md` holds work authorization and progress. `CHANGELOG.md` records completed changes. `CONTRIBUTING.md` gives a concise workflow. None requires GitHub access.
+`AGENTS.md` describes project purpose, constraints, architecture, and operating rules. `CONTRIBUTING.md` gives the concise workflow. `BACKLOG.md` and `CHANGELOG.md` are optional planning and release records, not authorization gates. None requires GitHub access.
 
 ## Authorization to work
 
-- **Proposed** backlog tasks are not permission to edit code. Only tasks explicitly marked **Approved** by the owner may be implemented independently.
-- Before starting, briefly notify the owner which approved task is being worked on, which files are likely to change, and the expected outcome. An approved task does not require permission for each ordinary edit.
-- An agent may update task progress (`Approved` → `In Progress` → `Completed`) and maintain the factual changelog for approved work. These updates must not change a task's authorized scope or falsely imply owner approval.
-- Work outside the approved scope, material redesigns, dependency changes, security-sensitive changes, and changes to governing policies require additional owner approval. Minor implementation decisions within the approved scope do not.
-- If there is no approved task covering the request, describe the proposed task and await authorization before editing working files. An agent must not mark its own proposal **Approved**.
-- When work finishes, give the owner a concise, specific summary of changed paths, before/after behavior, tests (including unrun tests), risks, and rollback steps. The owner must remain aware of meaningful changes.
+- A direct repository-owner request authorizes local, reversible edits within the described scope. It does not need a backlog entry, a separate start notice, or repeated approval for ordinary implementation decisions.
+- Ask before materially expanding scope or performing a governance change, dependency addition or upgrade, security/privacy-sensitive change, destructive operation, or other action that is difficult to reverse.
+- If the request is ambiguous about a protected or high-risk boundary, explain the specific decision needed and wait for the owner.
+- A backlog item may document substantial or deferred work, but its absence does not block a direct owner request. Agents must not invent owner approval for proposed work.
+- When work finishes, give the owner one concise summary of changed paths, relevant tests and unrun checks, known risks, and practical rollback guidance.
 
 ## Git and publication permissions
 
@@ -45,11 +43,10 @@ Before modifying files:
 
 ## Task and change records
 
-- `BACKLOG.md` is the single task index. Use stable identifiers `LF-0001`, `LF-0002`, etc. Never recycle task IDs.
-- Status values: **Proposed**, **Approved**, **In Progress**, **Completed**. Only the owner authorizes the transition to **Approved**; agents may record factual progress on approved tasks.
-- Each task states its purpose, scope, acceptance criteria, and dated status updates. Use ISO 8601 **UTC** timestamps (for example, `2026-10-27T16:00:00Z`). Do not invent missing timestamps or claim work was performed when it was not.
-- For each completed task, add one specific entry to `CHANGELOG.md` identifying exact repository-relative paths, the previous behavior, new behavior, reason, verified tests/results, known risks, and rollback guidance. Note anything that was not tested.
-- Keep entries factual and concise. Do not log every keystroke or turn routine progress into a new task. Corrections to finished work receive a new entry rather than rewriting established history.
+- Use `BACKLOG.md` for substantial, deferred, multi-session, or explicitly tracked work. Routine owner-requested edits do not need task IDs or status transitions.
+- When a task is tracked, use stable identifiers `LF-0001`, `LF-0002`, etc.; never recycle IDs. Only the owner authorizes **Approved** status, while agents may record factual progress afterward.
+- Use `CHANGELOG.md` for releases and major user-visible changes. Routine fixes, documentation edits, and internal maintenance need no entry unless the owner requests one.
+- Keep any records factual and concise. Use ISO 8601 UTC timestamps, do not invent approvals or test results, and do not rewrite established historical entries.
 
 ## Privacy in repository records
 

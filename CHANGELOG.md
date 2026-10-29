@@ -1,8 +1,8 @@
 # Lost & Found — Changelog
 
-Permanent record of **completed project changes**, organized newest first. An entry describes one completed backlog task; it is not a transcript of development activity. This file is usable with or without Git.
+Permanent record of **releases and major user-visible changes**, organized newest first. It is not a transcript of development activity, and entries do not require matching backlog tasks. Routine fixes, documentation edits, and internal maintenance are omitted unless the repository owner requests an entry. This file is usable with or without Git.
 
-Completed changes are listed below. Prior work must not be backfilled with invented dates, tests, or approvals.
+Recorded changes are listed below. Existing entries are historical and must not be rewritten or backfilled with invented dates, tests, or approvals.
 
 ## LF-0002 — Add styled About Us page
 
@@ -44,7 +44,7 @@ Completed changes are listed below. Prior work must not be backfilled with inven
 ## LF-0001 — Specific completed change
 
 - **Completed (UTC):** YYYY-MM-DDTHH:MM:SSZ
-- **Related task:** [LF-0001](BACKLOG.md#lf-0001--short-specific-title)
+- **Related task (optional):** [LF-0001](BACKLOG.md#lf-0001--short-specific-title)
 - **Changed paths:**
   - `index.html`
   - `css/homepage.css`
@@ -59,6 +59,8 @@ Completed changes are listed below. Prior work must not be backfilled with inven
 
 ## Recording rules
 
+- Add entries only for releases, major user-visible changes, or an explicit owner request.
+- A related backlog task is optional. When none exists, omit the `Related task` field.
 - Record the exact repository-relative files changed and explain the change in concrete terms.
 - Use ISO 8601 UTC timestamps. Never guess dates or manufacture test results.
 - Report meaningful before-and-after behavior, not just "updated UI" or "fixed styling".
