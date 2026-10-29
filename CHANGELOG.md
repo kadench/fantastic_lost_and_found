@@ -2,7 +2,24 @@
 
 Permanent record of **completed project changes**, organized newest first. An entry describes one completed backlog task; it is not a transcript of development activity. This file is usable with or without Git.
 
-No completed changes have been recorded in this proposed changelog. Prior work must not be backfilled with invented dates, tests, or approvals.
+Completed changes are listed below. Prior work must not be backfilled with invented dates, tests, or approvals.
+
+## LF-0001 — Rebuild homepage around lost-and-found listings
+
+- **Completed (UTC):** 2026-10-29T16:05:06Z
+- **Related task:** [LF-0001](BACKLOG.md#lf-0001--rebuild-homepage-around-lost-and-found-listings)
+- **Changed paths:**
+  - `index.html`
+  - `css/homepage.css`
+  - `js/main.js`
+  - `BACKLOG.md`
+- **Before:** The public homepage presented a comic campaign hero, three mission cards, and a generic CTA without the reference page's lost-and-found browsing content.
+- **After:** The homepage now includes the reference page's navigation, account notices, reporting hero, lost/found filters, status and date controls, sorting, eight case listings, local item-detail dialogs, report section, about copy, and footer navigation. The content uses the repository's dark comic tokens, typographic/CSS case visuals, responsive layout, and local-only interaction messaging.
+- **Reason:** The homepage needed to contain the reference page's information and workflow while retaining the repository's current visual system and artwork restrictions.
+- **Verification:** Viewed the rebuilt homepage and reference page in the local browser; verified eight visible listings; verified category filtering, lost-only status filtering, reset behavior, alphabetical sorting, clue cycling, item detail dialog open/close, account notice dialog, report-intent messaging, and no horizontal overflow; checked browser console for errors/warnings; calculated selected foreground/background ratios including paper on red (7.00:1), ink on yellow (12.37:1), blue-on-light on paper (9.36:1), and paper on panel (15.43:1); ran `node --check js/main.js`; searched changed source for external image tags, inline handlers, TODOs, and FIXMEs.
+- **Not verified:** Prettier could not run because the package was not available in the local cache; exhaustive 320/375/768/1024/1440 viewport review, zoom/text enlargement, color-vision simulation, assistive-technology review, full WCAG AAA contrast audit, ZIP validation, and complete cross-page regression were not run.
+- **Risks:** The account and reporting flows are intentionally local/demo-only; the contact link opens the example mail client address from the reference content, and no backend submission is implemented.
+- **Rollback:** Revert `index.html`, `css/homepage.css`, and `js/main.js` to their LF-0001 parent versions; retain the task and changelog records as historical documentation.
 
 ## Entry format
 

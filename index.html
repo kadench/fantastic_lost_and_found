@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101426">
-  <title>Lost & Found — Every Find Has a Story</title>
+  <meta name="description" content="A community-driven lost and found platform to reunite people with their belongings.">
+  <title>Lost &amp; Found — Help Return It</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -13,65 +14,237 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
+
   <header class="site-header">
     <div class="container header-inner">
-      <a class="wordmark" href="index.html">LOST <span>&amp;</span> FOUND</a>
+      <a class="wordmark" href="index.html" aria-label="Lost and Found home">LOST <span>&amp;</span> FOUND</a>
       <nav class="site-nav" aria-label="Main navigation">
         <a href="index.html" aria-current="page">Home</a>
-        <a href="styleguide.html" >Style guide</a>
-        <a href="404.html" >404</a>
+        <a href="#items">Browse items</a>
+        <a href="#report">Report an item</a>
+        <a href="#about">About</a>
       </nav>
+      <div class="account-actions" aria-label="Account actions">
+        <a class="button button--outline button--small" href="#account-note" data-account-action="Log in">Log in</a>
+        <a class="button button--small" href="#account-note" data-account-action="Sign up">Sign up</a>
+      </div>
     </div>
   </header>
+
   <main id="main">
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-inner">
+        <div class="hero-copy">
+          <span class="kicker">Community case file / Issue 001</span>
+          <h1 id="hero-title">LOST SOMETHING?<br><span>HELP RETURN IT.</span></h1>
+          <p class="lead">A community-driven lost and found platform to reunite people with their belongings.</p>
+          <div class="button-row" aria-label="Reporting actions">
+            <a class="button button--large" href="#report" data-report-type="lost">＋ Report a Lost Item</a>
+            <a class="button button--large button--secondary" href="#report" data-report-type="found">⌕ Report a Found Item</a>
+          </div>
+        </div>
+        <div class="hero-side" aria-label="Case status">
+          <div class="speech hero-callout" id="hero-message" role="status" aria-live="polite">PSST... START WITH THE CLUES.</div>
+          <div class="hero-stamp">
+            <span class="kicker">Active search / 08 cases</span>
+            <strong>HELP<br>RETURN<br>IT.</strong>
+          </div>
+          <button class="button button--secondary clue-button" type="button" id="hero-quip">New clue</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="listings-section" id="items" aria-labelledby="recent-heading">
+      <div class="container content-layout">
+        <aside class="filters panel panel--dark" aria-labelledby="filter-heading">
+          <div class="section-kicker">Search the case files</div>
+          <h2 id="filter-heading">Filter items</h2>
+          <form id="filter-form">
+            <div class="field">
+              <label for="category">Item type</label>
+              <select id="category" name="category">
+                <option value="all">All categories</option>
+                <option value="bags">Bags &amp; clothing</option>
+                <option value="electronics">Electronics</option>
+                <option value="accessories">Accessories</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="location">Location</label>
+              <select id="location" name="location">
+                <option value="all">All locations</option>
+                <option value="library">Library</option>
+                <option value="student center">Student Center</option>
+                <option value="gym">Gym</option>
+                <option value="science building">Science Building</option>
+                <option value="cafeteria">Cafeteria</option>
+                <option value="engineering building">Engineering Building</option>
+                <option value="classroom 201">Classroom 201</option>
+                <option value="parking lot b">Parking Lot B</option>
+              </select>
+            </div>
+            <fieldset class="fieldset">
+              <legend>Status</legend>
+              <label class="check-line" for="show-lost"><input id="show-lost" name="show-lost" type="checkbox" checked> Lost items</label>
+              <label class="check-line" for="show-found"><input id="show-found" name="show-found" type="checkbox" checked> Found items</label>
+            </fieldset>
+            <div class="field">
+              <label for="date">Date posted</label>
+              <select id="date" name="date">
+                <option value="all">Any time</option>
+                <option value="7">Last 7 days</option>
+                <option value="30">Last 30 days</option>
+              </select>
+            </div>
+            <div class="filter-actions">
+              <button class="button" type="submit">Apply filters</button>
+              <button class="button button--outline button--small" type="reset">Reset</button>
+            </div>
+          </form>
+        </aside>
+
+        <section class="listings" aria-labelledby="recent-heading">
+          <div class="listings-heading">
+            <div>
+              <span class="section-kicker">Fresh leads</span>
+              <h2 id="recent-heading">Recent items</h2>
+            </div>
+            <div class="sort-control field">
+              <label for="sort">Sort by</label>
+              <select id="sort" name="sort">
+                <option value="newest">Newest first</option>
+                <option value="oldest">Oldest first</option>
+                <option value="name">Name A–Z</option>
+              </select>
+            </div>
+          </div>
+          <p class="result-summary" id="result-summary" role="status" aria-live="polite">8 items shown.</p>
+
+          <div class="item-grid" id="item-grid">
+            <article class="item-card" data-category="bags" data-location="library" data-status="found" data-date="2026-10-24" data-name="Black Backpack">
+              <div class="item-visual item-visual--backpack" aria-hidden="true"><span>BACK<br>PACK</span><b>CASE 01</b></div>
+              <div class="item-info">
+                <div class="item-heading"><h3>Black Backpack</h3><span class="status status--found">Found</span></div>
+                <p class="item-meta"><span aria-hidden="true">◆</span> Library <span aria-hidden="true">/</span> <time datetime="2026-10-24">Oct 24, 2026</time></p>
+                <a class="details" href="#claim-note" data-details>View details</a>
+              </div>
+            </article>
+            <article class="item-card" data-category="accessories" data-location="student center" data-status="lost" data-date="2026-10-22" data-name="Keys with Blue Keychain">
+              <div class="item-visual item-visual--keys" aria-hidden="true"><span>KEYS</span><b>CASE 02</b></div>
+              <div class="item-info">
+                <div class="item-heading"><h3>Keys with Blue Keychain</h3><span class="status status--lost">Lost</span></div>
+                <p class="item-meta"><span aria-hidden="true">◆</span> Student Center <span aria-hidden="true">/</span> <time datetime="2026-10-22">Oct 22, 2026</time></p>
+                <a class="details" href="#claim-note" data-details>View details</a>
+              </div>
+            </article>
+            <article class="item-card" data-category="other" data-location="gym" data-status="found" data-date="2026-10-21" data-name="Water Bottle">
+              <div class="item-visual item-visual--bottle" aria-hidden="true"><span>HYDRATE</span><b>CASE 03</b></div>
+              <div class="item-info">
+                <div class="item-heading"><h3>Water Bottle</h3><span class="status status--found">Found</span></div>
+                <p class="item-meta"><span aria-hidden="true">◆</span> Gym <span aria-hidden="true">/</span> <time datetime="2026-10-21">Oct 21, 2026</time></p>
+                <a class="details" href="#claim-note" data-details>View details</a>
+              </div>
+            </article>
+            <article class="item-card" data-category="electronics" data-location="science building" data-status="lost" data-date="2026-10-20" data-name="Wireless Earbuds">
+              <div class="item-visual item-visual--earbuds" aria-hidden="true"><span>LISTEN</span><b>CASE 04</b></div>
+              <div class="item-info">
+                <div class="item-heading"><h3>Wireless Earbuds</h3><span class="status status--lost">Lost</span></div>
+                <p class="item-meta"><span aria-hidden="true">◆</span> Science Building <span aria-hidden="true">/</span> <time datetime="2026-10-20">Oct 20, 2026</time></p>
+                <a class="details" href="#claim-note" data-details>View details</a>
+              </div>
+            </article>
+            <article class="item-card" data-category="bags" data-location="cafeteria" data-status="found" data-date="2026-10-19" data-name="Black Jacket">
+              <div class="item-visual item-visual--jacket" aria-hidden="true"><span>JACKET</span><b>CASE 05</b></div>
+              <div class="item-info">
+                <div class="item-heading"><h3>Black Jacket</h3><span class="status status--found">Found</span></div>
+                <p class="item-meta"><span aria-hidden="true">◆</span> Cafeteria <span aria-hidden="true">/</span> <time datetime="2026-10-19">Oct 19, 2026</time></p>
+                <a class="details" href="#claim-note" data-details>View details</a>
+              </div>
+            </article>
+            <article class="item-card" data-category="accessories" data-location="engineering building" data-status="lost" data-date="2026-10-18" data-name="Student ID">
+              <div class="item-visual item-visual--id" aria-hidden="true"><span>ID<br>PASS</span><b>CASE 06</b></div>
+              <div class="item-info">
+                <div class="item-heading"><h3>Student ID</h3><span class="status status--lost">Lost</span></div>
+                <p class="item-meta"><span aria-hidden="true">◆</span> Engineering Building <span aria-hidden="true">/</span> <time datetime="2026-10-18">Oct 18, 2026</time></p>
+                <a class="details" href="#claim-note" data-details>View details</a>
+              </div>
+            </article>
+            <article class="item-card" data-category="accessories" data-location="classroom 201" data-status="found" data-date="2026-10-17" data-name="Glasses">
+              <div class="item-visual item-visual--glasses" aria-hidden="true"><span>LOOK<br>CLOSER</span><b>CASE 07</b></div>
+              <div class="item-info">
+                <div class="item-heading"><h3>Glasses</h3><span class="status status--found">Found</span></div>
+                <p class="item-meta"><span aria-hidden="true">◆</span> Classroom 201 <span aria-hidden="true">/</span> <time datetime="2026-10-17">Oct 17, 2026</time></p>
+                <a class="details" href="#claim-note" data-details>View details</a>
+              </div>
+            </article>
+            <article class="item-card" data-category="accessories" data-location="parking lot b" data-status="lost" data-date="2026-10-16" data-name="Wallet">
+              <div class="item-visual item-visual--wallet" aria-hidden="true"><span>WALLET</span><b>CASE 08</b></div>
+              <div class="item-info">
+                <div class="item-heading"><h3>Wallet</h3><span class="status status--lost">Lost</span></div>
+                <p class="item-meta"><span aria-hidden="true">◆</span> Parking Lot B <span aria-hidden="true">/</span> <time datetime="2026-10-16">Oct 16, 2026</time></p>
+                <a class="details" href="#claim-note" data-details>View details</a>
+              </div>
+            </article>
+          </div>
+          <p class="empty-state" id="empty-state" hidden>No items match your filters. Try another selection.</p>
+        </section>
+      </div>
+    </section>
+
+    <section class="report-section" id="report" aria-labelledby="report-heading">
+      <div class="container report-inner">
         <div>
-          <span class="kicker">The everyday adventure / Issue 001</span>
-          <h1 id="hero-title" class="display">LOST?<br><span>FOUND!</span></h1>
-          <p class="lead">Every great find starts with a little detour.</p>
-          <p>Some things vanish. Others turn up with a story. This is where the search gets interesting.</p>
-          <div class="button-row">
-            <a class="button" href="#the-mission">Explore the mission</a>
-            <button class="button button--secondary" type="button" id="hero-quip">New clue</button>
-          </div>
+          <span class="kicker">Close the case</span>
+          <h2 id="report-heading">Have something to report?</h2>
+          <p class="lead">Help your community by posting a lost or found item.</p>
+          <p id="report-intent" class="report-intent" role="status" aria-live="polite">Choose a report type to start a case.</p>
         </div>
-        <div class="hero-side">
-          <div class="speech hero-callout" id="hero-message" role="status" aria-live="polite">PSST... THE STORY STARTS HERE.</div>
-          <div class="hero-stamp" aria-label="Case status: open">
-            <span class="kicker">Case file / 001</span><br>
-            <strong>KEEP<br>LOOKING.</strong>
-          </div>
-        </div>
+        <a class="button button--large" href="mailto:lostfound@example.com?subject=Lost%20or%20Found%20Item">Contact Us to Report</a>
       </div>
     </section>
-    <section class="section" id="the-mission">
-      <div class="container">
-        <span class="kicker">The origin story</span>
-        <h2>SMALL MYSTERIES. BIG DISCOVERIES.</h2>
-        <p class="lead">A bold home for the misplaced, rediscovered, and unexpectedly memorable.</p>
-        <div class="grid-three">
-          <article class="panel feature-card"><span class="feature-number">01</span><h3>NOTICE.</h3><p>Look twice. A detail might be the whole story.</p></article>
-          <article class="panel feature-card"><span class="feature-number">02</span><h3>FOLLOW.</h3><p>Every clue leads somewhere worth exploring.</p></article>
-          <article class="panel feature-card"><span class="feature-number">03</span><h3>FIND.</h3><p>A small discovery deserves a big reveal.</p></article>
+
+    <section class="about-section" id="about" aria-labelledby="about-heading">
+      <div class="container about-grid">
+        <div>
+          <span class="section-kicker">About this case board</span>
+          <h2 id="about-heading">Every clue helps.</h2>
         </div>
-      </div>
-    </section>
-    <section class="section call-to-action" id="next-chapter">
-      <div class="container">
-        <span class="kicker">The next issue</span>
-        <h2>THE ADVENTURE IS OUT THERE.</h2>
-        <p class="lead">No superpowers required. Just a little curiosity.</p>
-        <a class="button button--secondary" href="404.html">Take the wrong turn</a>
+        <p>Lost &amp; Found is a local case board for the misplaced, rediscovered, and unexpectedly memorable. Browse the leads, share a detail, and help send something home.</p>
       </div>
     </section>
   </main>
+
   <footer class="site-footer">
     <div class="container footer-inner">
-      <span>Lost &amp; Found / Issue 01</span>
-      <span>Primary mark reserved for human artwork.</span>
-      <a href="styleguide.html">Design system</a>
+      <a class="wordmark" href="index.html">LOST <span>&amp;</span> FOUND</a>
+      <nav aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="#items">Browse items</a>
+        <a href="#report">Report an item</a>
+        <a href="#about">About</a>
+        <a href="mailto:lostfound@example.com">Contact</a>
+      </nav>
+      <span id="account-note" class="footer-note">Made for the community / local demo, no account backend connected.</span>
+      <p id="claim-note" class="footer-note">To claim an item, contact the site administrator and provide proof of ownership.</p>
     </div>
   </footer>
+
+  <dialog id="item-dialog" class="item-dialog" aria-labelledby="dialog-title">
+    <button class="close-dialog" type="button" aria-label="Close item details">×</button>
+    <span class="section-kicker">Case details</span>
+    <h2 id="dialog-title"></h2>
+    <p id="dialog-description"></p>
+    <p>To claim an item, contact the site administrator and provide proof of ownership.</p>
+    <button class="button" type="button" data-close-dialog>Close</button>
+  </dialog>
+
+  <dialog id="account-dialog" class="item-dialog" aria-labelledby="account-dialog-title">
+    <button class="close-dialog" type="button" aria-label="Close account notice">×</button>
+    <span class="section-kicker">Local demo notice</span>
+    <h2 id="account-dialog-title">Account features are not connected.</h2>
+    <p id="account-dialog-description">This static demo includes the account actions for the interface only. No account data is collected or transmitted.</p>
+    <button class="button" type="button" data-close-dialog>Close</button>
+  </dialog>
 </body>
 </html>

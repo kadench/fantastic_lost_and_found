@@ -27,7 +27,16 @@ _No tasks in progress._
 
 ## Completed
 
-_No completed tasks recorded._
+### LF-0001 — Rebuild homepage around lost-and-found listings
+
+- **Status:** Completed
+- **Created:** 2026-10-29T15:54:16Z
+- **Owner approval:** Approved by repository owner on 2026-10-29T15:54:16Z
+- **Objective:** Bring the complete lost-and-found browsing experience from the reference item page into the public homepage while preserving the repository's comic-book design system.
+- **Scope:** `index.html`, `css/homepage.css`, `js/main.js`, and factual task/change records.
+- **Acceptance criteria:** The homepage contains the reference page's navigation, reporting hero, filters, sorting, eight item listings, local detail dialogs, report section, and footer; it uses the authoritative comic tokens and accessible responsive layout; controls work without a backend or data transmission.
+- **Progress:** Rebuilt the homepage structure, comic styling, and local interactions; verified the rendered page and core behaviors in the local browser.
+- **Last updated:** 2026-10-29T16:05:06Z
 
 ## Task entry template
 
