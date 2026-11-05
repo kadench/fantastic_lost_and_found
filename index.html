@@ -4,13 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101426">
+  <meta name="author" content="Team 4 CSE 170">
+  <meta name="creator" content="Team 4 CSE 170">
+  <meta name="acknowledgement" content="Team 4 CSE 170">
+  <meta name="source-credit" content="Dynamic Grid Plugin by Michael Becker">
+  <link rel="author" href="https://github.com/21beckem/">
+  <link rel="source" href="https://github.com/21beckem/dynamic-grid-plugin">
   <meta name="description" content="A community-driven lost and found platform to reunite people with their belongings.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Lost &amp; Found — Help Return It">
+  <meta name="twitter:description" content="A community-driven lost and found platform to reunite people with their belongings.">
+  <meta name="twitter:creator" content="Team 4 CSE 170">
   <title>Lost &amp; Found — Help Return It</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/homepage.css">
-  <script type="module" src="js/main.js"></script>
+  <link rel="stylesheet" href="css/homepage.css?v=4">
+  <script type="module" src="js/main.js?v=4"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -20,9 +30,9 @@
       <a class="wordmark" href="./" aria-label="Lost and Found home">LOST <span>&amp;</span> FOUND</a>
       <nav class="site-nav" aria-label="Main navigation">
         <a href="./" aria-current="page">Home</a>
-        <a href="#items">Browse items</a>
-        <a href="#report">Report an item</a>
-        <a href="about.html">About</a>
+        <a href="./about.html">About</a>
+        <a href="./#homepage-summary">How it works</a>
+        <a href="./#report">Report an item</a>
       </nav>
       <div class="account-actions" aria-label="Account actions">
         <a class="button button--outline button--small" href="#account-note" data-account-action="Log in">Log in</a>
@@ -46,7 +56,7 @@
         <div class="hero-side" aria-label="Case status">
           <div class="speech hero-callout" id="hero-message" role="status" aria-live="polite">PSST... START WITH THE CLUES.</div>
           <div class="hero-stamp">
-            <span class="kicker">Active search / 08 cases</span>
+            <span class="kicker">Active search / <span id="case-count">08</span> cases</span>
             <strong>HELP<br>RETURN<br>IT.</strong>
           </div>
           <button class="button button--secondary clue-button" type="button" id="hero-quip">New clue</button>
@@ -87,7 +97,7 @@
             <fieldset class="fieldset">
               <legend>Status</legend>
               <label class="check-line" for="show-lost"><input id="show-lost" name="show-lost" type="checkbox" checked> Lost items</label>
-              <label class="check-line" for="show-found"><input id="show-found" name="show-found" type="checkbox" checked> Found items</label>
+              <label class="check-line" for="show-found"><input id="show-found" name="show-found" type="checkbox"> Found items</label>
             </fieldset>
             <div class="field">
               <label for="date">Date posted</label>
@@ -119,9 +129,14 @@
               </select>
             </div>
           </div>
+          <div class="status-tabs" role="tablist" aria-label="Item status">
+            <button class="status-tab status-tab--active" id="all-tab" type="button" role="tab" aria-selected="true" aria-controls="item-grid" data-status-tab="all">All</button>
+            <button class="status-tab" id="lost-tab" type="button" role="tab" aria-selected="false" aria-controls="item-grid" data-status-tab="lost" tabindex="-1">Lost</button>
+            <button class="status-tab" id="found-tab" type="button" role="tab" aria-selected="false" aria-controls="item-grid" data-status-tab="found" tabindex="-1">Found</button>
+          </div>
           <p class="result-summary" id="result-summary" role="status" aria-live="polite">8 items shown.</p>
 
-          <div class="item-grid" id="item-grid">
+          <div class="item-grid" id="item-grid" data-sheet-id="1PVSVNf53T7quFc6Nx3LRUbas-nzNbj9wBpy-sqwC1XU">
             <article class="item-card" data-category="bags" data-location="library" data-status="found" data-date="2026-10-24" data-name="Black Backpack">
               <div class="item-visual item-visual--backpack" aria-hidden="true"><span>BACK<br>PACK</span><b>CASE 01</b></div>
               <div class="item-info">
@@ -200,7 +215,7 @@
           <p class="lead">Help your community by posting a lost or found item.</p>
           <p id="report-intent" class="report-intent" role="status" aria-live="polite">Choose a report type to start a case.</p>
         </div>
-        <a class="button button--large" href="mailto:lostfound@example.com?subject=Lost%20or%20Found%20Item">Contact Us to Report</a>
+        <a class="button button--large" href="https://forms.gle/Q5ycMoZLdD25fqwZ8">Submit a report</a>
       </div>
     </section>
 
@@ -220,9 +235,9 @@
       <a class="wordmark" href="./">LOST <span>&amp;</span> FOUND</a>
       <nav aria-label="Footer navigation">
         <a href="./">Home</a>
-        <a href="#items">Browse items</a>
-        <a href="#report">Report an item</a>
-        <a href="about.html">About</a>
+        <a href="./#homepage-summary">How it works</a>
+        <a href="./#report">Report an item</a>
+        <a href="./about.html">About</a>
         <a href="mailto:lostfound@example.com">Contact</a>
       </nav>
       <span id="account-note" class="footer-note">Made for the community / local demo, no account backend connected.</span>
