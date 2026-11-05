@@ -30,9 +30,9 @@
       <a class="wordmark" href="./" aria-label="Lost and Found home">LOST <span>&amp;</span> FOUND</a>
       <nav class="site-nav" aria-label="Main navigation">
         <a href="./" aria-current="page">Home</a>
-        <a href="#homepage-summary">How it works</a>
-        <a href="#report">Report an item</a>
-        <a href="about.html">About</a>
+        <a href="./about.html">About</a>
+        <a href="./#homepage-summary">How it works</a>
+        <a href="./#report">Report an item</a>
       </nav>
       <div class="account-actions" aria-label="Account actions">
         <a class="button button--outline button--small" href="#account-note" data-account-action="Log in">Log in</a>
@@ -130,7 +130,8 @@
             </div>
           </div>
           <div class="status-tabs" role="tablist" aria-label="Item status">
-            <button class="status-tab status-tab--active" id="lost-tab" type="button" role="tab" aria-selected="true" aria-controls="item-grid" data-status-tab="lost">Lost</button>
+            <button class="status-tab status-tab--active" id="all-tab" type="button" role="tab" aria-selected="true" aria-controls="item-grid" data-status-tab="all">All</button>
+            <button class="status-tab" id="lost-tab" type="button" role="tab" aria-selected="false" aria-controls="item-grid" data-status-tab="lost" tabindex="-1">Lost</button>
             <button class="status-tab" id="found-tab" type="button" role="tab" aria-selected="false" aria-controls="item-grid" data-status-tab="found" tabindex="-1">Found</button>
           </div>
           <p class="result-summary" id="result-summary" role="status" aria-live="polite">8 items shown.</p>
@@ -234,9 +235,9 @@
       <a class="wordmark" href="./">LOST <span>&amp;</span> FOUND</a>
       <nav aria-label="Footer navigation">
         <a href="./">Home</a>
-        <a href="#homepage-summary">How it works</a>
-        <a href="#report">Report an item</a>
-        <a href="about.html">About</a>
+        <a href="./#homepage-summary">How it works</a>
+        <a href="./#report">Report an item</a>
+        <a href="./about.html">About</a>
         <a href="mailto:lostfound@example.com">Contact</a>
       </nav>
       <span id="account-note" class="footer-note">Made for the community / local demo, no account backend connected.</span>

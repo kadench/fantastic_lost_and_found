@@ -206,10 +206,6 @@
     width: 100%;
     justify-content: center;
   }
-
-  .account-actions {
-    margin-left: auto;
-  }
 }
 
 @media (max-width: 35rem) {
