@@ -8,9 +8,15 @@ if (reportIntent && (reportType === "lost" || reportType === "found")) {
 const submitForm = document.querySelector("#submit-item-form");
 const submitStatus = document.querySelector("#submit-status");
 
-submitForm?.addEventListener("submit", (event) => {
+submitForm?.addEventListener("submit", async (event) => {
   event.preventDefault();
-  submitStatus.textContent = "Your demo response is ready to review. Nothing was transmitted.";
+  const data = new FormData(submitForm);
+  try {
+    await fetch(submitForm.action, {
+      method: 'POST',
+      body: data,
+    });
+  } catch(err) {}
 });
 
 submitForm?.addEventListener("reset", () => {
