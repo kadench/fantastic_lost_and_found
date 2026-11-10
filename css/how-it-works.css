@@ -1,0 +1,157 @@
+@import url("./components.css");
+
+.how-hero {
+  color: var(--paper);
+  background: var(--blue);
+  border-bottom: 8px solid var(--yellow);
+}
+
+.how-hero-inner {
+  padding-block: clamp(3rem, 8vw, 7rem);
+}
+
+.how-hero h1 {
+  max-width: 62rem;
+  margin: 0.8rem 0 0;
+  font-size: clamp(3.3rem, 9vw, 8rem);
+  line-height: 0.95;
+}
+
+.how-hero h1 span {
+  color: var(--yellow);
+}
+
+.report-section {
+  color: var(--paper);
+  background: var(--red-on-light);
+  border-top: 8px solid var(--yellow);
+}
+
+.report-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: 2rem;
+  padding-block: clamp(3rem, 7vw, 6rem);
+}
+
+.report-section--focus {
+  min-height: 40rem;
+}
+
+.report-section .kicker {
+  color: var(--paper);
+}
+
+.report-section h2 {
+  max-width: 42rem;
+  margin: 0.5rem 0 0.8rem;
+  font-size: clamp(2.2rem, 5vw, 5rem);
+}
+
+.report-section .lead {
+  margin: 0;
+}
+
+.report-intent {
+  min-height: 1.5rem;
+  margin: 1rem 0 0;
+  color: var(--yellow);
+  font-weight: 900;
+}
+
+.submit-form {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  color: var(--ink);
+  background: var(--paper);
+  border: var(--border-heavy);
+  box-shadow: var(--shadow-comic);
+  border-radius: var(--radius);
+}
+
+.submit-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.form-note {
+  margin: 1.25rem 0 0;
+  color: #35415b;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.submit-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.submit-status {
+  min-height: 1.5rem;
+  margin: 1rem 0 0;
+  color: var(--red-on-light);
+  font-weight: 800;
+}
+
+.about-section {
+  padding-block: clamp(3rem, 6vw, 5rem);
+  color: var(--ink);
+  background: var(--yellow);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.about-grid h2 {
+  margin: 0.4rem 0 0;
+  font-size: clamp(2rem, 5vw, 4.5rem);
+}
+
+.about-grid p {
+  max-width: 42rem;
+  margin: 0;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+}
+
+.site-footer {
+  color: var(--paper);
+  background: var(--ink);
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  padding-block: 1.5rem;
+}
+
+.footer-inner nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.footer-note {
+  max-width: 30rem;
+  color: var(--line);
+  font-size: 0.75rem;
+}
+
+@media (max-width: 42rem) {
+  .report-inner,
+  .about-grid,
+  .submit-form-grid {
+    grid-template-columns: 1fr;
+  }
+}

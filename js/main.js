@@ -187,15 +187,6 @@ document.querySelectorAll("dialog").forEach((dialog) => {
   });
 });
 
-const reportIntent = document.querySelector("#report-intent");
-
-document.querySelectorAll("[data-report-type]").forEach((reportLink) => {
-  reportLink.addEventListener("click", () => {
-    const reportType = reportLink.dataset.reportType === "lost" ? "lost" : "found";
-    reportIntent.textContent = `You are starting a ${reportType} item report. Contact the site administrator to continue.`;
-  });
-});
-
 const accountDialog = document.querySelector("#account-dialog");
 
 document.querySelectorAll("[data-account-action]").forEach((accountLink) => {

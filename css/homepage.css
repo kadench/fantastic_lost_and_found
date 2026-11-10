@@ -48,9 +48,7 @@
 .hero-side,
 .listings,
 .filters,
-.item-card,
-.report-inner,
-.about-grid,
+  .item-card,
 .footer-inner {
   min-width: 0;
 }
@@ -245,14 +243,6 @@
   color: var(--ink);
   background: var(--yellow);
   border: 2px solid var(--ink);
-}
-
-.report-section .kicker {
-  color: var(--paper);
-}
-
-.about-section .section-kicker {
-  color: var(--ink);
 }
 
 .sort-control {
@@ -462,61 +452,6 @@
   font-weight: 800;
 }
 
-.report-section {
-  color: var(--paper);
-  background: var(--red-on-light);
-  border-top: 8px solid var(--yellow);
-}
-
-.report-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  padding-block: clamp(3rem, 7vw, 6rem);
-}
-
-.report-section h2 {
-  max-width: 42rem;
-  margin: 0.5rem 0 0.8rem;
-  font-size: clamp(2.2rem, 5vw, 5rem);
-}
-
-.report-section .lead {
-  margin: 0;
-}
-
-.report-intent {
-  min-height: 1.5rem;
-  margin: 1rem 0 0;
-  color: var(--yellow);
-  font-weight: 900;
-}
-
-.about-section {
-  padding-block: clamp(3rem, 6vw, 5rem);
-  color: var(--ink);
-  background: var(--yellow);
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-  gap: 2rem;
-  align-items: start;
-}
-
-.about-grid h2 {
-  margin: 0.4rem 0 0;
-  font-size: clamp(2rem, 5vw, 4.5rem);
-}
-
-.about-grid p {
-  max-width: 42rem;
-  margin: 0;
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
-}
-
 .site-footer {
   color: var(--paper);
   background: var(--ink);
@@ -643,13 +578,6 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .report-inner {
-    display: grid;
-  }
 }
 
 @media (max-width: 35rem) {

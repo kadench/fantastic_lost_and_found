@@ -1,6 +1,6 @@
 # Lost & Found
 
-**Comic identity / Issue 01** · Three-page static website and interactive design-system reference.
+**Comic identity / Issue 01** · Four-page static website and interactive design-system reference.
 
 > **Artwork policy:** No AI-generated art, emblem, logo, illustration, character, or mark is included. The primary mark is reserved for human-created artwork.
 
@@ -9,6 +9,7 @@
 | Document | Purpose |
 | --- | --- |
 | [Homepage](https://kadench.github.io/fantastic_lost_and_found/index.html) | Comic-cover hero, story, features, and interactive clue dialogue |
+| [Submit an item](how-it-works.html) | Explains the community case board and provides the item submission form |
 | [Style guide](https://kadench.github.io/fantastic_lost_and_found/styleguide.html) | Reference specimens for color, typography, controls, full form, states, and spacing |
 | [404](https://kadench.github.io/fantastic_lost_and_found/404.html) | Animated portal with interactive clue dialogue and return link |
 
