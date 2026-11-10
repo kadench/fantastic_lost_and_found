@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101426">
+  <meta name="description" content="Submit a lost or found item to the Lost & Found community case board.">
+  <title>Lost &amp; Found — Submit an Item</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/how-it-works.css">
+  <script type="module" src="js/how-it-works.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="wordmark" href="./" aria-label="Lost and Found home">LOST <span>&amp;</span> FOUND</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="./">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./how-it-works.html#submit-item" aria-current="page">Submit an item</a>
+      </nav>
+      <div class="account-actions" aria-label="Account actions">
+        <a class="button button--outline button--small" href="./#account-note">Log in</a>
+        <a class="button button--small" href="./#account-note">Sign up</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="how-hero" aria-labelledby="how-title">
+      <div class="container how-hero-inner">
+        <span class="kicker">Community case file / Submit desk</span>
+        <h1 id="how-title">SUBMIT AN ITEM.<br><span>HELP RETURN IT.</span></h1>
+      </div>
+    </section>
+
+    <section class="report-section report-section--focus" id="submit-item" aria-labelledby="report-heading">
+      <div class="container report-inner">
+        <div class="submit-intro">
+          <span class="kicker">Close the case</span>
+          <h2 id="report-heading">Tell us what happened.</h2>
+          <p class="lead">Share the clues below so your community can help return it.</p>
+          <p id="report-intent" class="report-intent" role="status" aria-live="polite">Choose a report type to start a case.</p>
+        </div>
+        <form class="submit-form" id="submit-item-form" action="https://docs.google.com/forms/d/e/1FAIpQLSdBk7lZ3rh7pn_MDJaotSAkqi9Go1bPOYaET9tnpK2PsS1rOQ/formResponse">
+          <div class="submit-form-grid">
+            <div class="field">
+              <label for="X">What Item did you lose?</label>
+              <input id="item-description" name="entry.1616918175" type="text" placeholder="e.g. blue backpack">
+            </div>
+            <div class="field">
+              <label for="entry.428606175">Where did you lose it?</label>
+              <input id="item-location" name="entry.428606175" type="text" placeholder="e.g. library entrance">
+            </div>
+            <div class="field">
+              <label for="entry.1681815111">When did you lose it?</label>
+              <input id="item-date" name="entry.1681815111" type="date">
+            </div>
+            <div class="field">
+              <label for="entry.800837247">Contact information:</label>
+              <input id="contact-information" name="entry.800837247" type="text" placeholder="e.g. email or phone">
+            </div>
+          </div>
+          <p class="form-note">Local demo form. Nothing is transmitted.</p>
+          <div class="submit-actions">
+            <button class="button button--large" type="submit">Submit an item</button>
+            <button class="button button--outline" type="reset">Reset</button>
+          </div>
+          <p class="submit-status" id="submit-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="about-section" aria-labelledby="homepage-summary-heading">
+      <div class="container about-grid">
+        <div>
+          <span class="section-kicker">About this case board</span>
+          <h2 id="homepage-summary-heading">Every clue helps.</h2>
+        </div>
+        <p>Lost &amp; Found is a local case board for the misplaced, rediscovered, and unexpectedly memorable. Browse the leads, share a detail, and help send something home.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="wordmark" href="./">LOST <span>&amp;</span> FOUND</a>
+      <nav aria-label="Footer navigation">
+        <a href="./">Home</a>
+        <a href="./how-it-works.html#submit-item">Submit an item</a>
+        <a href="./about.html">About</a>
+        <a href="mailto:lostfound@example.com">Contact</a>
+      </nav>
+      <span class="footer-note">Made for the community / local demo, no account backend connected.</span>
+    </div>
+  </footer>
+</body>
+</html>
