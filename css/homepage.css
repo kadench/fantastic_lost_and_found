@@ -1,6 +1,7 @@
 @import url("./components.css");
 
 .hero {
+  padding-top: 2%;
   position: relative;
   overflow: clip;
   background-color: var(--blue);
@@ -37,11 +38,11 @@
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(15rem, 0.85fr);
-  gap: clamp(2rem, 6vw, 6rem);
+  grid-template-columns: minmax(0, 1.35fr) minmax(12rem, 0.65fr);
+  gap: clamp(1.25rem, 4vw, 4rem);
   align-items: center;
-  min-height: 27rem;
-  padding-block: clamp(3rem, 6vw, 5rem);
+  min-height: 16.2rem;
+  padding-block: clamp(1rem, 1.5vw, 1.5rem);
 }
 
 .hero-copy,
@@ -60,9 +61,9 @@
 }
 
 .hero h1 {
-  margin: 1rem 0 1.35rem;
+  margin: 0.65rem 0 0.85rem;
   color: var(--paper);
-  font-size: clamp(3rem, 4.4vw, 5.8rem);
+  font-size: clamp(2.5rem, 3.5vw, 4.5rem);
   line-height: 0.97;
   text-shadow: 5px 6px 0 var(--ink);
 }
@@ -73,39 +74,56 @@
 
 .hero .lead {
   max-width: 40rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.85rem;
   font-weight: 800;
-  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
 }
 
 .hero-side {
   display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   justify-items: start;
-  gap: 1.5rem;
+  gap: 0.5rem;
 }
 
 .hero-callout {
+  grid-column: 1 / -1;
   transform: rotate(2deg);
+  transform: translateY(-2rem);
 }
 
 .hero-stamp {
-  width: min(100%, 18rem);
-  padding: clamp(1.3rem, 3vw, 2rem);
+  width: min(100%, 13rem);
+  padding: 1rem;
   color: var(--ink);
   background: var(--yellow);
   border: 5px solid var(--ink);
   box-shadow: 9px 9px 0 var(--paper);
   transform: rotate(-3deg);
+  transform: scale(1.3);
+
 }
 
 .hero-stamp strong {
   display: block;
   margin-top: 0.55rem;
-  font: clamp(2.1rem, 4vw, 3.6rem)/0.95 var(--font-display);
+  font: clamp(1.5rem, 2.2vw, 2.1rem)/0.95 var(--font-display);
+}
+
+.hero-stamp .kicker {
+  font-size: 0.65rem;
+  letter-spacing: 0.04em;
 }
 
 .clue-button {
-  align-self: start;
+    display: flex;
+    justify-self: end;
+  align-self: center;
+  /* align-self: start; */
+  /* position: absolute; */
+  translate: 0 -1.7em;
+  /* right: 13em; */
+  /* display: none; */
 }
 
 .listings-section {
@@ -116,6 +134,7 @@
 
 .content-layout {
   display: grid;
+  width: min(calc(100% - 2rem), 96rem);
   grid-template-columns: minmax(11.5rem, 13rem) minmax(0, 1fr);
   gap: clamp(1.5rem, 3vw, 3rem);
   align-items: start;
@@ -190,6 +209,7 @@
 
 .listings-heading {
   display: flex;
+  flex-wrap: wrap;
   align-items: end;
   justify-content: space-between;
   gap: 1.5rem;
@@ -202,6 +222,7 @@
 
 .status-tabs {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 0.5rem;
   margin: 1.4rem 0 1rem;
@@ -255,8 +276,30 @@
   color: var(--ink);
 }
 
-.sort-control {
-  flex: 0 1 12rem;
+.listing-tools {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 12rem;
+  width: min(100%, 34.41rem);
+  align-items: end;
+  gap: 0.75rem;
+}
+
+.search-control {
+  min-width: 0;
+}
+
+.search-control label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.search-control input:focus-visible {
+  outline: 3px solid var(--blue-on-light);
+  outline-offset: 3px;
 }
 
 .result-summary {
@@ -273,12 +316,27 @@
 }
 
 .item-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  color: inherit;
   background: var(--paper);
   border: 3px solid var(--ink);
   box-shadow: 4px 4px 0 var(--ink);
+  /* aspect-ratio: 1/1.2; */
+  text-decoration: none;
+}
+
+.item-card-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.item-card:focus-within {
+  outline: 4px solid var(--blue-on-light);
+  outline-offset: 4px;
 }
 
 .item-card[hidden] {
@@ -417,6 +475,8 @@
 }
 
 .status {
+  position: relative;
+  z-index: 2;
   flex: 0 0 auto;
   padding: 0.25rem 0.5rem;
   border: 2px solid var(--ink);
@@ -425,6 +485,16 @@
   font-weight: 900;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+}
+
+button.status {
+  cursor: pointer;
+}
+
+button.status:hover,
+button.status:focus-visible {
+  box-shadow: 3px 3px 0 var(--ink);
+  text-decoration: underline;
 }
 
 .status--found {
@@ -452,6 +522,7 @@
   width: fit-content;
   color: var(--blue-on-light);
   font-weight: 900;
+  text-decoration: underline;
   text-underline-offset: 0.25em;
 }
 
@@ -589,9 +660,6 @@
     margin-right: auto;
   }
 
-  .item-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
 }
 
 @media (max-width: 58rem) {
@@ -607,6 +675,10 @@
   .hero-side {
     grid-template-columns: minmax(0, 1fr) minmax(11rem, 0.75fr);
     align-items: center;
+  }
+
+  .hero-callout {
+    grid-column: auto;
   }
 
   .clue-button {
@@ -654,8 +726,12 @@
 
 @media (max-width: 35rem) {
   .hero h1 {
-    font-size: clamp(2.8rem, 13vw, 4.4rem);
+    font-size: clamp(2rem, 10vw, 3rem);
     text-shadow: 3px 3px 0 var(--ink);
+  }
+
+  .hero-stamp strong {
+    display: none;
   }
 
   .hero-side,
@@ -671,6 +747,11 @@
 
   .listings-heading {
     align-items: start;
+  }
+
+  .listing-tools {
+    grid-template-columns: 1fr;
+    width: 100%;
   }
 
   .sort-control {

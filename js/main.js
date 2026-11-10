@@ -20,6 +20,8 @@ let itemCards = [...document.querySelectorAll(".item-card")];
 const emptyState = document.querySelector("#empty-state");
 const resultSummary = document.querySelector("#result-summary");
 const sortControl = document.querySelector("#sort");
+const searchControl = document.querySelector("#item-search");
+const searchForm = document.querySelector("#search-form");
 const caseCount = document.querySelector("#case-count");
 const statusTabs = [...document.querySelectorAll("[data-status-tab]")];
 
@@ -87,6 +89,16 @@ statusTabs.forEach((tab) => {
   });
 });
 
+document.addEventListener("click", (event) => {
+  const badge = event.target.closest("[data-filter-status]");
+  if (!badge) return;
+
+  const status = badge.dataset.filterStatus;
+  setStatusControls(status);
+  applyFilters();
+  statusTabs.find((tab) => tab.dataset.statusTab === status)?.focus({ preventScroll: true });
+});
+
 function sortItems() {
   const sort = sortControl.value;
   const sortedCards = [...itemCards].sort((firstCard, secondCard) => {
@@ -103,6 +115,8 @@ function sortItems() {
 }
 
 function matchesFilters(card) {
+  const query = searchControl.value.trim().toLocaleLowerCase();
+  const searchableText = [card.dataset.name, card.dataset.description, card.dataset.locationLabel, card.dataset.category, card.dataset.status].join(" ").toLocaleLowerCase();
   const category = document.querySelector("#category").value;
   const location = document.querySelector("#location").value;
   const dateRange = document.querySelector("#date").value;
@@ -114,13 +128,13 @@ function matchesFilters(card) {
   const locationMatches = location === "all" || card.dataset.location === location;
 
   if (dateRange === "all") {
-    return categoryMatches && locationMatches && statusMatches && tabMatches;
+    return categoryMatches && locationMatches && statusMatches && tabMatches && searchableText.includes(query);
   }
 
   const cutoff = new Date(latestPostedDate);
   cutoff.setDate(cutoff.getDate() - Number(dateRange));
   const cardDate = new Date(`${card.dataset.date}T00:00:00`);
-  return categoryMatches && locationMatches && statusMatches && tabMatches && cardDate >= cutoff;
+  return categoryMatches && locationMatches && statusMatches && tabMatches && searchableText.includes(query) && cardDate >= cutoff;
 }
 
 function applyFilters(event) {
@@ -146,6 +160,36 @@ filterForm?.addEventListener("reset", () => requestAnimationFrame(() => {
 }));
 sortControl?.addEventListener("change", () => applyFilters());
 
+function updateUrlParameter(name, value, mode = "replaceState") {
+  const url = new URL(window.location.href);
+  if (value) url.searchParams.set(name, value);
+  else url.searchParams.delete(name);
+  window.history[mode](null, "", url);
+}
+
+searchControl.value = new URLSearchParams(window.location.search).get("q") || "";
+searchForm?.addEventListener("submit", (event) => event.preventDefault());
+searchControl?.addEventListener("input", () => {
+  updateUrlParameter("q", searchControl.value.trim());
+  applyFilters();
+});
+
+// The short prompt types once when search receives focus; typing immediately cancels it.
+let placeholderTimer;
+searchControl?.addEventListener("focus", () => {
+  if (searchControl.value || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const prompt = "Try backpack, library, or keys…";
+  let position = 0;
+  window.clearInterval(placeholderTimer);
+  searchControl.placeholder = "";
+  placeholderTimer = window.setInterval(() => {
+    searchControl.placeholder = prompt.slice(0, ++position);
+    if (position >= prompt.length) window.clearInterval(placeholderTimer);
+  }, 45);
+});
+searchControl?.addEventListener("input", () => window.clearInterval(placeholderTimer));
+searchControl?.addEventListener("blur", () => window.clearInterval(placeholderTimer));
+
 const itemDialog = document.querySelector("#item-dialog");
 const dialogTitle = document.querySelector("#dialog-title");
 const dialogDescription = document.querySelector("#dialog-description");
@@ -156,6 +200,21 @@ function closeDialog(dialog) {
   }
 }
 
+function showItemFromUrl() {
+  const id = new URLSearchParams(window.location.search).get("id");
+  if (!id) {
+    closeDialog(itemDialog);
+    return;
+  }
+  const card = itemCards.find((item) => item.dataset.id === id);
+  if (!card || !itemDialog?.showModal) return;
+  const status = card.dataset.status === "lost" ? "Lost" : "Found";
+  const description = card.dataset.description || "No additional description was provided.";
+  dialogTitle.textContent = card.dataset.name;
+  dialogDescription.textContent = `${status} item · ${card.dataset.locationLabel || card.dataset.location} · ${card.dataset.dateLabel || card.dataset.date}. ${description}`;
+  if (!itemDialog.open) itemDialog.showModal();
+}
+
 document.addEventListener("click", (event) => {
   const detailsLink = event.target.closest("[data-details]");
   if (!detailsLink || !itemDialog?.showModal) {
@@ -163,12 +222,18 @@ document.addEventListener("click", (event) => {
   }
 
   event.preventDefault();
-  const card = detailsLink.closest(".item-card");
-  const status = card.dataset.status === "lost" ? "Lost" : "Found";
-  const description = card.dataset.description || "No additional description was provided.";
-  dialogTitle.textContent = card.dataset.name;
-  dialogDescription.textContent = `${status} item · ${card.dataset.locationLabel} · ${card.dataset.dateLabel}. ${description}`;
-  itemDialog.showModal();
+  updateUrlParameter("id", detailsLink.closest(".item-card").dataset.id, "pushState");
+  showItemFromUrl();
+});
+
+itemDialog?.addEventListener("close", () => {
+  if (new URLSearchParams(window.location.search).has("id")) updateUrlParameter("id", "", "replaceState");
+});
+
+window.addEventListener("popstate", () => {
+  searchControl.value = new URLSearchParams(window.location.search).get("q") || "";
+  applyFilters();
+  showItemFromUrl();
 });
 
 document.querySelectorAll("[data-close-dialog]").forEach((button) => {
@@ -329,6 +394,13 @@ function createSheetCard(item, index) {
   card.dataset.dateLabel = item.date.label;
   card.dataset.name = item.title;
   card.dataset.description = item.description;
+  card.dataset.id = item.id;
+
+  const detailsLink = document.createElement("a");
+  detailsLink.className = "item-card-link";
+  detailsLink.href = "#";
+  detailsLink.dataset.details = "";
+  detailsLink.setAttribute("aria-label", `View details for ${item.title}`);
 
   const visual = document.createElement("div");
   visual.className = `item-visual item-visual--sheet item-visual--sheet-${index % 3}`;
@@ -363,21 +435,22 @@ function createSheetCard(item, index) {
   heading.className = "item-heading";
   const title = document.createElement("h3");
   title.textContent = item.title;
-  const status = document.createElement("span");
+  const status = document.createElement("button");
   status.className = `status status--${item.status}`;
+  status.type = "button";
+  status.dataset.filterStatus = item.status;
+  status.setAttribute("aria-label", `Show ${item.status} items`);
   status.textContent = item.status === "lost" ? "Lost" : "Found";
   heading.append(title, status);
 
   const meta = document.createElement("p");
   meta.className = "item-meta";
   meta.textContent = `◆ ${item.locationLabel} / ${item.date.label}`;
-  const details = document.createElement("a");
+  const details = document.createElement("span");
   details.className = "details";
-  details.href = "#claim-note";
-  details.dataset.details = "";
   details.textContent = "View details";
   info.append(heading, meta, details);
-  card.append(visual, info);
+  card.append(detailsLink, visual, info);
   return card;
 }
 
@@ -411,6 +484,7 @@ async function loadRemoteItems() {
     const statusIndex = findColumn(table.headers, ["status", "lost or found", "lost/found"]);
     const categoryIndex = findColumn(table.headers, ["category", "type"]);
     const dateIndex = findColumn(table.headers, ["timestamp", "date", "time"]);
+    const idIndex = table.headers.findIndex((header) => /^(case|item|record)?\s*id$/i.test(header.trim()));
 
     const items = table.rows.map((row, rowIndex) => {
       const fallbackTitleIndex = row.findIndex((value, index) => index !== dateIndex && value);
@@ -419,6 +493,7 @@ async function loadRemoteItems() {
       const locationLabel = cellValue(row, locationIndex) || "Location unavailable";
       const categoryLabel = cellValue(row, categoryIndex) || "Other";
       return {
+        id: cellValue(row, idIndex) || String(rowIndex + 1),
         title,
         description: cellValue(row, descriptionIndex),
         image: cellValue(row, imageIndex),
@@ -440,10 +515,16 @@ async function loadRemoteItems() {
     itemGrid.replaceChildren(...items.map(createSheetCard));
     itemCards = [...itemGrid.querySelectorAll(".item-card")];
     applyFilters();
+    showItemFromUrl();
   } catch (error) {
     console.warn(error);
   }
 }
 
 setStatusControls(getDemoStatusView());
+itemCards.forEach((card, index) => {
+  card.dataset.id = String(index + 1);
+});
+applyFilters();
+showItemFromUrl();
 loadRemoteItems();

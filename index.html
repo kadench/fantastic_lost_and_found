@@ -19,8 +19,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/homepage.css?v=4">
-  <script type="module" src="js/main.js?v=4"></script>
+  <link rel="stylesheet" href="css/homepage.css?v=5">
+  <script type="module" src="js/main.js?v=5"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -31,8 +31,8 @@
       <nav class="site-nav" aria-label="Main navigation">
         <a href="./" aria-current="page">Home</a>
         <a href="./about.html">About</a>
-        <a href="./#homepage-summary">How it works</a>
-        <a href="./#report">Report an item</a>
+        <a href="./#items">Browse items</a>
+        <a href="https://forms.gle/Q5ycMoZLdD25fqwZ8">Report an item</a>
       </nav>
       <div class="account-actions" aria-label="Account actions">
         <a class="button button--outline button--small" href="#account-note" data-account-action="Log in">Log in</a>
@@ -120,13 +120,19 @@
               <span class="section-kicker">Fresh leads</span>
               <h2 id="recent-heading">Recent items</h2>
             </div>
-            <div class="sort-control field">
-              <label for="sort">Sort by</label>
-              <select id="sort" name="sort">
-                <option value="newest">Newest first</option>
-                <option value="oldest">Oldest first</option>
-                <option value="name">Name A–Z</option>
-              </select>
+            <div class="listing-tools">
+              <form class="search-control field" id="search-form" role="search">
+                <label for="item-search">Search items</label>
+                <input id="item-search" name="q" type="search" autocomplete="off" placeholder="Search cases…">
+              </form>
+              <div class="sort-control field">
+                <label for="sort">Sort by</label>
+                <select id="sort" name="sort">
+                  <option value="newest">Newest first</option>
+                  <option value="oldest">Oldest first</option>
+                  <option value="name">Name A–Z</option>
+                </select>
+              </div>
             </div>
           </div>
           <div class="status-tabs" role="tablist" aria-label="Item status">
@@ -138,67 +144,75 @@
 
           <div class="item-grid" id="item-grid" data-sheet-id="1PVSVNf53T7quFc6Nx3LRUbas-nzNbj9wBpy-sqwC1XU">
             <article class="item-card" data-category="bags" data-location="library" data-status="found" data-date="2026-10-24" data-name="Black Backpack">
+              <a class="item-card-link" href="#" data-details aria-label="View details for Black Backpack"></a>
               <div class="item-visual item-visual--backpack" aria-hidden="true"><span>BACK<br>PACK</span><b>CASE 01</b></div>
               <div class="item-info">
-                <div class="item-heading"><h3>Black Backpack</h3><span class="status status--found">Found</span></div>
+                <div class="item-heading"><h3>Black Backpack</h3><button class="status status--found" type="button" data-filter-status="found" aria-label="Show found items">Found</button></div>
                 <p class="item-meta"><span aria-hidden="true">◆</span> Library <span aria-hidden="true">/</span> <time datetime="2026-10-24">Oct 24, 2026</time></p>
-                <a class="details" href="#claim-note" data-details>View details</a>
+                <span class="details">View details</span>
               </div>
             </article>
             <article class="item-card" data-category="accessories" data-location="student center" data-status="lost" data-date="2026-10-22" data-name="Keys with Blue Keychain">
+              <a class="item-card-link" href="#" data-details aria-label="View details for Keys with Blue Keychain"></a>
               <div class="item-visual item-visual--keys" aria-hidden="true"><span>KEYS</span><b>CASE 02</b></div>
               <div class="item-info">
-                <div class="item-heading"><h3>Keys with Blue Keychain</h3><span class="status status--lost">Lost</span></div>
+                <div class="item-heading"><h3>Keys with Blue Keychain</h3><button class="status status--lost" type="button" data-filter-status="lost" aria-label="Show lost items">Lost</button></div>
                 <p class="item-meta"><span aria-hidden="true">◆</span> Student Center <span aria-hidden="true">/</span> <time datetime="2026-10-22">Oct 22, 2026</time></p>
-                <a class="details" href="#claim-note" data-details>View details</a>
+                <span class="details">View details</span>
               </div>
             </article>
             <article class="item-card" data-category="other" data-location="gym" data-status="found" data-date="2026-10-21" data-name="Water Bottle">
+              <a class="item-card-link" href="#" data-details aria-label="View details for Water Bottle"></a>
               <div class="item-visual item-visual--bottle" aria-hidden="true"><span>HYDRATE</span><b>CASE 03</b></div>
               <div class="item-info">
-                <div class="item-heading"><h3>Water Bottle</h3><span class="status status--found">Found</span></div>
+                <div class="item-heading"><h3>Water Bottle</h3><button class="status status--found" type="button" data-filter-status="found" aria-label="Show found items">Found</button></div>
                 <p class="item-meta"><span aria-hidden="true">◆</span> Gym <span aria-hidden="true">/</span> <time datetime="2026-10-21">Oct 21, 2026</time></p>
-                <a class="details" href="#claim-note" data-details>View details</a>
+                <span class="details">View details</span>
               </div>
             </article>
             <article class="item-card" data-category="electronics" data-location="science building" data-status="lost" data-date="2026-10-20" data-name="Wireless Earbuds">
+              <a class="item-card-link" href="#" data-details aria-label="View details for Wireless Earbuds"></a>
               <div class="item-visual item-visual--earbuds" aria-hidden="true"><span>LISTEN</span><b>CASE 04</b></div>
               <div class="item-info">
-                <div class="item-heading"><h3>Wireless Earbuds</h3><span class="status status--lost">Lost</span></div>
+                <div class="item-heading"><h3>Wireless Earbuds</h3><button class="status status--lost" type="button" data-filter-status="lost" aria-label="Show lost items">Lost</button></div>
                 <p class="item-meta"><span aria-hidden="true">◆</span> Science Building <span aria-hidden="true">/</span> <time datetime="2026-10-20">Oct 20, 2026</time></p>
-                <a class="details" href="#claim-note" data-details>View details</a>
+                <span class="details">View details</span>
               </div>
             </article>
             <article class="item-card" data-category="bags" data-location="cafeteria" data-status="found" data-date="2026-10-19" data-name="Black Jacket">
+              <a class="item-card-link" href="#" data-details aria-label="View details for Black Jacket"></a>
               <div class="item-visual item-visual--jacket" aria-hidden="true"><span>JACKET</span><b>CASE 05</b></div>
               <div class="item-info">
-                <div class="item-heading"><h3>Black Jacket</h3><span class="status status--found">Found</span></div>
+                <div class="item-heading"><h3>Black Jacket</h3><button class="status status--found" type="button" data-filter-status="found" aria-label="Show found items">Found</button></div>
                 <p class="item-meta"><span aria-hidden="true">◆</span> Cafeteria <span aria-hidden="true">/</span> <time datetime="2026-10-19">Oct 19, 2026</time></p>
-                <a class="details" href="#claim-note" data-details>View details</a>
+                <span class="details">View details</span>
               </div>
             </article>
             <article class="item-card" data-category="accessories" data-location="engineering building" data-status="lost" data-date="2026-10-18" data-name="Student ID">
+              <a class="item-card-link" href="#" data-details aria-label="View details for Student ID"></a>
               <div class="item-visual item-visual--id" aria-hidden="true"><span>ID<br>PASS</span><b>CASE 06</b></div>
               <div class="item-info">
-                <div class="item-heading"><h3>Student ID</h3><span class="status status--lost">Lost</span></div>
+                <div class="item-heading"><h3>Student ID</h3><button class="status status--lost" type="button" data-filter-status="lost" aria-label="Show lost items">Lost</button></div>
                 <p class="item-meta"><span aria-hidden="true">◆</span> Engineering Building <span aria-hidden="true">/</span> <time datetime="2026-10-18">Oct 18, 2026</time></p>
-                <a class="details" href="#claim-note" data-details>View details</a>
+                <span class="details">View details</span>
               </div>
             </article>
             <article class="item-card" data-category="accessories" data-location="classroom 201" data-status="found" data-date="2026-10-17" data-name="Glasses">
+              <a class="item-card-link" href="#" data-details aria-label="View details for Glasses"></a>
               <div class="item-visual item-visual--glasses" aria-hidden="true"><span>LOOK<br>CLOSER</span><b>CASE 07</b></div>
               <div class="item-info">
-                <div class="item-heading"><h3>Glasses</h3><span class="status status--found">Found</span></div>
+                <div class="item-heading"><h3>Glasses</h3><button class="status status--found" type="button" data-filter-status="found" aria-label="Show found items">Found</button></div>
                 <p class="item-meta"><span aria-hidden="true">◆</span> Classroom 201 <span aria-hidden="true">/</span> <time datetime="2026-10-17">Oct 17, 2026</time></p>
-                <a class="details" href="#claim-note" data-details>View details</a>
+                <span class="details">View details</span>
               </div>
             </article>
             <article class="item-card" data-category="accessories" data-location="parking lot b" data-status="lost" data-date="2026-10-16" data-name="Wallet">
+              <a class="item-card-link" href="#" data-details aria-label="View details for Wallet"></a>
               <div class="item-visual item-visual--wallet" aria-hidden="true"><span>WALLET</span><b>CASE 08</b></div>
               <div class="item-info">
-                <div class="item-heading"><h3>Wallet</h3><span class="status status--lost">Lost</span></div>
+                <div class="item-heading"><h3>Wallet</h3><button class="status status--lost" type="button" data-filter-status="lost" aria-label="Show lost items">Lost</button></div>
                 <p class="item-meta"><span aria-hidden="true">◆</span> Parking Lot B <span aria-hidden="true">/</span> <time datetime="2026-10-16">Oct 16, 2026</time></p>
-                <a class="details" href="#claim-note" data-details>View details</a>
+                <span class="details">View details</span>
               </div>
             </article>
           </div>
@@ -235,8 +249,8 @@
       <a class="wordmark" href="./">LOST <span>&amp;</span> FOUND</a>
       <nav aria-label="Footer navigation">
         <a href="./">Home</a>
-        <a href="./#homepage-summary">How it works</a>
-        <a href="./#report">Report an item</a>
+        <a href="./#items">Browse items</a>
+        <a href="https://forms.gle/Q5ycMoZLdD25fqwZ8">Report an item</a>
         <a href="./about.html">About</a>
         <a href="mailto:lostfound@example.com">Contact</a>
       </nav>
