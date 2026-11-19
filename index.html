@@ -1,122 +1,158 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101426">
-  <meta name="author" content="Team 4 CSE 170">
-  <meta name="creator" content="Team 4 CSE 170">
-  <meta name="acknowledgement" content="Team 4 CSE 170">
-  <meta name="source-credit" content="Dynamic Grid Plugin by Michael Becker">
-  <link rel="author" href="https://github.com/21beckem/">
-  <link rel="source" href="https://github.com/21beckem/dynamic-grid-plugin">
-  <link rel="icon" type="image/x-icon" href="assets/favicon.svg">
-  <meta name="description" content="A community-driven lost and found platform to reunite people with their belongings.">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Lost &amp; Found — Help Return It">
-  <meta name="twitter:description" content="A community-driven lost and found platform to reunite people with their belongings.">
-  <meta name="twitter:creator" content="Team 4 CSE 170">
-  <title>Lost &amp; Found — Help Return It</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/homepage.css?v=4">
-  <script type="module" src="js/main.js?v=4"></script>
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to main content</a>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101426" />
+    <meta name="author" content="Team 4 CSE 170" />
+    <meta name="creator" content="Team 4 CSE 170" />
+    <meta name="acknowledgement" content="Team 4 CSE 170" />
+    <meta name="source-credit" content="Dynamic Grid Plugin by Michael Becker" />
+    <link rel="author" href="https://github.com/21beckem/" />
+    <link rel="source" href="https://github.com/21beckem/dynamic-grid-plugin" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.svg" />
+    <meta
+      name="description"
+      content="A community-driven lost and found platform to reunite people with their belongings."
+    />
+    <meta name="twitter:card" content="summary" />  
+    <meta name="twitter:title" content="Lost &amp; Found — Help Return It" />
+    <meta
+      name="twitter:description"
+      content="A community-driven lost and found platform to reunite people with their belongings."
+    />
+    <meta name="twitter:creator" content="Team 4 CSE 170" />
+    <title>Lost &amp; Found — Help Return It</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/homepage.css?v=4" />
+    <script type="module" src="js/main.js?v=4"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="wordmark" href="./" aria-label="Lost and Found home">LOST <span>&amp;</span> FOUND</a>
-      <nav class="site-nav" aria-label="Main navigation">
-        <a href="./" aria-current="page">Home</a>
-        <a href="./about.html">About</a>
-        <a href="./how-it-works.html#submit-item">Submit an item</a>
-      </nav>
-      <div class="account-actions" aria-label="Account actions">
-        <a class="button button--outline button--small" href="#account-note" data-account-action="Log in">Log in</a>
-        <a class="button button--small" href="#account-note" data-account-action="Sign up">Sign up</a>
-      </div>
-    </div>
-  </header>
-
-  <main id="main">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <span class="kicker">Community case file / Issue 001</span>
-          <h1 id="hero-title">LOST SOMETHING?<br><span>HELP RETURN IT.</span></h1>
-          <p class="lead">A community-driven lost and found platform to reunite people with their belongings.</p>
-          <div class="button-row" aria-label="Reporting actions">
-            <a class="button button--large" href="./how-it-works.html?type=lost#submit-item">＋ Report a Lost Item</a>
-            <a class="button button--large button--secondary" href="./how-it-works.html?type=found#submit-item">⌕ Report a Found Item</a>
-          </div>
-        </div>
-        <div class="hero-side" aria-label="Case status">
-          <div class="speech hero-callout" id="hero-message" role="status" aria-live="polite">PSST... START WITH THE CLUES.</div>
-          <div class="hero-stamp">
-            <span class="kicker">Active search / <span id="case-count">08</span> cases</span>
-            <strong>HELP<br>RETURN<br>IT.</strong>
-          </div>
-          <button class="button button--secondary clue-button" type="button" id="hero-quip">New clue</button>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="wordmark" href="./" aria-label="Lost and Found home"
+          >LOST <span>&amp;</span> FOUND</a
+        >
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="./" aria-current="page">Home</a>
+          <a href="./about.html">About</a>
+          <a href="./how-it-works.html#submit-item">Submit an item</a>
+        </nav>
+        <div class="account-actions" aria-label="Account actions">
+          <a
+            class="button button--outline button--small"
+            href="#account-note"
+            data-account-action="Log in"
+            >Log in</a
+          >
+          <a class="button button--small" href="#account-note" data-account-action="Sign up"
+            >Sign up</a
+          >
         </div>
       </div>
-    </section>
+    </header>
 
-    <section class="listings-section" id="items" aria-labelledby="recent-heading">
-      <div class="container">
-        <iframe
-          src="https://21beckem.github.io/dynamic-grid-plugin/google-sheets/?uid=1LgzMyrQwCQs6pbGASxL4dwbeRqfvFDgiQ1ksC3tu8oo&sheet=1874400783&title=%7B%7BWhat%20Item%20did%20you%20lose%3F%7D%7D&description=%7B%7BWhere%20did%20you%20lose%20it%3F%7D%7D&link=https%3A%2F%2Fkadench.github.io%2Ffantastic_lost_and_found%2Fpdp.html%3Fuid%3D%7B%7BUnique%20ID%7D%7D&linkTarget=_parent&emptyMessage=No%20results%20found%20%7B%7Bdetails%7D%7D&styles=%7B%22version%22%3A1%2C%22targets%22%3A%7B%22card%22%3A%7B%22borderRadius%22%3A%7B%22value%22%3A0%2C%22unit%22%3A%22px%22%7D%2C%22boxShadow%22%3A%7B%22x%22%3A5%2C%22y%22%3A5%2C%22blur%22%3A0%2C%22spread%22%3A0%2C%22unit%22%3A%22px%22%2C%22color%22%3A%22%23000000%22%2C%22opacity%22%3A1%2C%22inset%22%3Afalse%7D%2C%22border%22%3A%7B%22width%22%3A%7B%22value%22%3A4%2C%22unit%22%3A%22px%22%7D%2C%22style%22%3A%22solid%22%2C%22color%22%3A%22%23000000%22%7D%7D%7D%7D"
-          how-to-edit="on the page, press the Dynamic Grid Plugin link at the bottom right, then click 'the builder' to edit the grid settings. Then after editing, use the link it gives you to replace the one above"
-          frameborder="0"
-          width="100%"
-          height="325"
-        ></iframe>
-        <script>
-          window.addEventListener('message', (event) => {
-            if (event.origin !== 'https://21beckem.github.io') return;
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <span class="kicker">Community case file / Issue 001</span>
+            <h1 id="hero-title">LOST SOMETHING?<br /><span>HELP RETURN IT.</span></h1>
+            <p class="lead">
+              A community-driven lost and found platform to reunite people with their belongings.
+            </p>
+            <div class="button-row" aria-label="Reporting actions">
+              <a class="button button--large" href="./how-it-works.html?type=lost#submit-item"
+                >＋ Report a Lost Item</a
+              >
+              <a
+                class="button button--large button--secondary"
+                href="./how-it-works.html?type=found#submit-item"
+                >⌕ Report a Found Item</a
+              >
+            </div>
+          </div>
+          <div class="hero-side" aria-label="Case status">
+            <div class="speech hero-callout" id="hero-message" role="status" aria-live="polite">
+              PSST... START WITH THE CLUES.
+            </div>
+            <div class="hero-stamp">
+              <span class="kicker">Active search / <span id="case-count">08</span> cases</span>
+              <strong>HELP<br />RETURN<br />IT.</strong>
+            </div>
+            <button class="button button--secondary clue-button" type="button" id="hero-quip">
+              New clue
+            </button>
+          </div>
+        </div>
+      </section>
 
-            if (event.data && event.data.type === 'resize') {
-              const iframe = document.currentScript.previousElementSibling;
-              iframe?.style.setProperty('height', event.data.height + 'px');
-            }
-          });
-        </script>
+      <section class="listings-section" id="items" aria-labelledby="recent-heading">
+        <div class="container">
+          <iframe
+            src="https://21beckem.github.io/dynamic-grid-plugin/google-sheets/?uid=1LgzMyrQwCQs6pbGASxL4dwbeRqfvFDgiQ1ksC3tu8oo&sheet=1874400783&title=%7B%7BWhat%20Item%20did%20you%20lose%3F%7D%7D&description=%7B%7BWhere%20did%20you%20lose%20it%3F%7D%7D&link=https%3A%2F%2Fkadench.github.io%2Ffantastic_lost_and_found%2Fpdp.html%3Fuid%3D%7B%7BUnique%20ID%7D%7D&linkTarget=_parent&emptyMessage=No%20results%20found%20%7B%7Bdetails%7D%7D&styles=%7B%22version%22%3A1%2C%22targets%22%3A%7B%22card%22%3A%7B%22borderRadius%22%3A%7B%22value%22%3A0%2C%22unit%22%3A%22px%22%7D%2C%22boxShadow%22%3A%7B%22x%22%3A5%2C%22y%22%3A5%2C%22blur%22%3A0%2C%22spread%22%3A0%2C%22unit%22%3A%22px%22%2C%22color%22%3A%22%23000000%22%2C%22opacity%22%3A1%2C%22inset%22%3Afalse%7D%2C%22border%22%3A%7B%22width%22%3A%7B%22value%22%3A4%2C%22unit%22%3A%22px%22%7D%2C%22style%22%3A%22solid%22%2C%22color%22%3A%22%23000000%22%7D%7D%7D%7D"
+            how-to-edit="on the page, press the Dynamic Grid Plugin link at the bottom right, then click 'the builder' to edit the grid settings. Then after editing, use the link it gives you to replace the one above"
+            frameborder="0"
+            width="100%"
+            height="325"
+          ></iframe>
+          <script>
+            window.addEventListener("message", (event) => {
+              if (event.origin !== "https://21beckem.github.io") return;
+
+              if (event.data && event.data.type === "resize") {
+                const iframe = document.currentScript.previousElementSibling;
+                iframe?.style.setProperty("height", event.data.height + "px");
+              }
+            });
+          </script>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a class="wordmark" href="./">LOST <span>&amp;</span> FOUND</a>
+        <nav aria-label="Footer navigation">
+          <a href="./">Home</a>
+          <a href="./how-it-works.html#submit-item">Submit an item</a>
+          <a href="./about.html">About</a>
+          <a href="mailto:lostfound@example.com">Contact</a>
+        </nav>
+        <span id="account-note" class="footer-note"
+          >Made for the community / local demo, no account backend connected.</span
+        >
+        <p id="claim-note" class="footer-note">
+          To claim an item, contact the site administrator and provide proof of ownership.
+        </p>
       </div>
-    </section>
+    </footer>
 
-  </main>
+    <dialog id="item-dialog" class="item-dialog" aria-labelledby="dialog-title">
+      <button class="close-dialog" type="button" aria-label="Close item details">×</button>
+      <span class="section-kicker">Case details</span>
+      <h2 id="dialog-title"></h2>
+      <p id="dialog-description"></p>
+      <p>To claim an item, contact the site administrator and provide proof of ownership.</p>
+      <button class="button" type="button" data-close-dialog>Close</button>
+    </dialog>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <a class="wordmark" href="./">LOST <span>&amp;</span> FOUND</a>
-      <nav aria-label="Footer navigation">
-        <a href="./">Home</a>
-        <a href="./how-it-works.html#submit-item">Submit an item</a>
-        <a href="./about.html">About</a>
-        <a href="mailto:lostfound@example.com">Contact</a>
-      </nav>
-      <span id="account-note" class="footer-note">Made for the community / local demo, no account backend connected.</span>
-      <p id="claim-note" class="footer-note">To claim an item, contact the site administrator and provide proof of ownership.</p>
-    </div>
-  </footer>
-
-  <dialog id="item-dialog" class="item-dialog" aria-labelledby="dialog-title">
-    <button class="close-dialog" type="button" aria-label="Close item details">×</button>
-    <span class="section-kicker">Case details</span>
-    <h2 id="dialog-title"></h2>
-    <p id="dialog-description"></p>
-    <p>To claim an item, contact the site administrator and provide proof of ownership.</p>
-    <button class="button" type="button" data-close-dialog>Close</button>
-  </dialog>
-
-  <dialog id="account-dialog" class="item-dialog" aria-labelledby="account-dialog-title">
-    <button class="close-dialog" type="button" aria-label="Close account notice">×</button>
-    <span class="section-kicker">Local demo notice</span>
-    <h2 id="account-dialog-title">Account features are not connected.</h2>
-    <p id="account-dialog-description">This static demo includes the account actions for the interface only. No account data is collected or transmitted.</p>
-    <button class="button" type="button" data-close-dialog>Close</button>
-  </dialog>
-</body>
+    <dialog id="account-dialog" class="item-dialog" aria-labelledby="account-dialog-title">
+      <button class="close-dialog" type="button" aria-label="Close account notice">×</button>
+      <span class="section-kicker">Local demo notice</span>
+      <h2 id="account-dialog-title">Account features are not connected.</h2>
+      <p id="account-dialog-description">
+        This static demo includes the account actions for the interface only. No account data is
+        collected or transmitted.
+      </p>
+      <button class="button" type="button" data-close-dialog>Close</button>
+    </dialog>
+  </body>
 </html>

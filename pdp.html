@@ -1,16 +1,19 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#101426">
-    <meta name="description" content="Lost & Found item details.">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101426" />
+    <meta name="description" content="Lost & Found item details." />
     <title>Item details | Lost & Found</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/pdp.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pdp.css" />
     <script type="module" src="js/pdp.js"></script>
   </head>
   <body>
@@ -18,7 +21,9 @@
 
     <header class="site-header">
       <div class="container header-inner">
-        <a class="wordmark" href="./" aria-label="Lost and Found home">LOST <span>&amp;</span> FOUND</a>
+        <a class="wordmark" href="./" aria-label="Lost and Found home"
+          >LOST <span>&amp;</span> FOUND</a
+        >
         <nav class="site-nav" aria-label="Main navigation">
           <a href="./">Home</a>
           <a href="./about.html">About</a>
@@ -35,16 +40,18 @@
       <section class="pdp-hero section" aria-labelledby="page-title">
         <div class="container">
           <a class="back-link" href="./#items">← Back to browse items</a>
-          <div id="pdp-status" class="status pdp-status" role="status" aria-live="polite">Loading case file…</div>
+          <div id="pdp-status" class="status pdp-status" role="status" aria-live="polite">
+            Loading case file…
+          </div>
 
           <div id="item-detail" class="pdp-layout" hidden>
             <aside class="item-media" aria-label="Item image">
               <div class="item-image-frame">
                 <div id="item-image-placeholder" class="item-image-placeholder" hidden>
                   <span class="kicker">No image supplied</span>
-                  <strong>CASE<br>CLUE</strong>
+                  <strong>CASE<br />CLUE</strong>
                 </div>
-                <img id="item-image" class="item-image" alt="" hidden>
+                <img id="item-image" class="item-image" alt="" hidden />
               </div>
             </aside>
 
@@ -65,7 +72,11 @@
                 </div>
                 <div>
                   <dt>Contact information</dt>
-                  <dd><a id="item-contact" href="mailto:lostfound@example.com">lostfound@example.com</a></dd>
+                  <dd>
+                    <a id="item-contact" href="mailto:lostfound@example.com"
+                      >lostfound@example.com</a
+                    >
+                  </dd>
                 </div>
               </dl>
             </article>
@@ -83,7 +94,9 @@
           <a href="./about.html">About</a>
           <a href="mailto:lostfound@example.com">Contact</a>
         </nav>
-        <span class="footer-note">Made for the community / local demo, no account backend connected.</span>
+        <span class="footer-note"
+          >Made for the community / local demo, no account backend connected.</span
+        >
       </div>
     </footer>
   </body>
