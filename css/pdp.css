@@ -1,0 +1,240 @@
+/* PDP-specific layout built from the same bands, panels, and comic offsets as the homepage. */
+[hidden] {
+  display: none !important;
+}
+
+.pdp-hero {
+  position: relative;
+  overflow: clip;
+  min-height: calc(100vh - 11rem);
+  padding-block: clamp(2.5rem, 6vw, 5rem) clamp(4rem, 8vw, 7rem);
+  color: var(--ink);
+  background: var(--paper);
+  border-bottom: 10px solid var(--yellow);
+}
+
+.pdp-hero::before {
+  position: absolute;
+  top: 9rem;
+  right: -8rem;
+  width: min(34vw, 24rem);
+  aspect-ratio: 1;
+  content: "";
+  border: clamp(10px, 2vw, 24px) solid rgb(49 91 255 / 0.18);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.pdp-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: clamp(2rem, 5vw, 3.5rem);
+  color: var(--blue-on-light);
+  font-weight: 900;
+}
+
+.pdp-status {
+  width: min(100%, 42rem);
+  min-height: 0;
+  margin: 0 auto 1.5rem 0;
+  color: var(--ink);
+  background: #ecf1ff;
+}
+
+.pdp-status:empty {
+  display: none;
+}
+
+.pdp-status.status--error {
+  border-color: var(--red-on-light);
+  background: #fff0f1;
+}
+
+.pdp-layout {
+  display: grid;
+  grid-template-columns: minmax(16rem, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+}
+
+.item-media {
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+}
+
+.item-image-frame {
+  position: relative;
+  display: grid;
+  flex: 0 1 28rem;
+  width: 100%;
+  aspect-ratio: 1;
+  place-items: center;
+  overflow: hidden;
+  padding: 0;
+  background: var(--yellow);
+  border: 4px solid var(--ink);
+  box-shadow: 9px 9px 0 var(--blue);
+  transform: rotate(-2deg);
+}
+
+.item-image-frame::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background-image: radial-gradient(var(--ink) 1px, transparent 1px);
+  background-size: 11px 11px;
+  opacity: 0.13;
+}
+
+.item-image {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: var(--paper);
+}
+
+.item-image-placeholder {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1rem;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  color: var(--ink);
+  text-align: center;
+}
+
+.item-image-placeholder strong {
+  font: clamp(3rem, 8vw, 6rem) / 0.88 var(--font-display);
+  letter-spacing: -0.06em;
+  text-shadow: 4px 4px 0 var(--paper);
+}
+
+.item-copy {
+  min-width: 0;
+  max-width: 42rem;
+}
+
+.item-copy h1 {
+  margin: 0.65rem 0 1rem;
+  color: var(--ink);
+  font-size: clamp(2.5rem, 5.5vw, 5rem);
+  line-height: 0.98;
+  text-shadow: 4px 4px 0 var(--yellow);
+}
+
+.item-kicker {
+  padding: 0.25rem 0.45rem;
+  color: var(--ink);
+  background: var(--yellow);
+  border: 2px solid var(--ink);
+}
+
+.item-uid {
+  margin: 0 0 1.5rem;
+  color: #35415b;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.item-uid strong {
+  color: var(--red-on-light);
+}
+
+.speech {
+  margin: 0 0 2rem 0.5rem;
+  transform: rotate(2deg);
+}
+
+.case-facts {
+  display: grid;
+  gap: 1.25rem;
+  margin: 0;
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+  box-shadow: 6px 6px 0 var(--red);
+}
+
+.case-facts div {
+  display: grid;
+  gap: 0.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.case-facts div:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.case-facts dt {
+  color: var(--yellow);
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.case-facts dd {
+  margin: 0;
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  font-weight: 700;
+}
+
+.case-facts a {
+  color: var(--paper);
+}
+
+@media (max-width: 58rem) {
+  .pdp-layout {
+    grid-template-columns: minmax(14rem, 0.85fr) minmax(0, 1.15fr);
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  .pdp-layout {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .item-image-frame {
+    flex-basis: 30rem;
+  }
+}
+
+@media (max-width: 35rem) {
+  .pdp-hero {
+    min-height: 0;
+  }
+
+  .pdp-hero::before {
+    top: 22rem;
+    right: -10rem;
+  }
+
+  .item-copy h1 {
+    font-size: clamp(2.35rem, 13vw, 4.2rem);
+  }
+
+  .item-image-frame {
+    width: calc(100% - 0.5rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .item-image-frame,
+  .speech {
+    transform: none;
+  }
+}
